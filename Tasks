@@ -1,10 +1,23 @@
-//Task that we discussed on Discord last week
+//Task that we discussed on Discord last week + Update in-class discussion on September 17, 2025.
 /*Tasks included:
 1. Website's UI: including 4 different pages: Login page, Main, Rank (Achievement chart), Add achievements page (Type in page), 
+09/17 Update: Kasim had a basic logging page. He talks about the need and possibility of creating a new username.
+
 2. Database for username and password (Coding or SQL, deciding)
+09/17 Update: Mapping is expected to be used.
+
 3. Homepage (ranking page) for achievements.
+
 4. Add/edit (delete?) records/achievements.
+
 5. Create accounts for the website
+
 6. Finish the UI of the login page.
 
+(7). Admin page, where admins can view all the accounts.
+09/17 Update: Expected to be developed later after the basic functions of the website have been done.
+
 We agreed that on Wednesday, September 17, we will discuss the database storage methods.*/
+
+On 09/17, we also discussed the specified language that was used to create the UI: CSS and HTML. 
+The need to divide the above general tasks into specific, smaller tasks is also mentioned.
