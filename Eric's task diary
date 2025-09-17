@@ -1,0 +1,16 @@
+Tien (Eric)'s project diary:
+1. Saturday, September 12: Create the C++ file and test the ability to add activities, after a long discussion and ideas about how it should be. Try to put out on the screen the activities.
+On this day, I also chose 5 different activities that are "common" and have different k values.
+
+2. Monday, September 15: Write about the input of hours and validate the input (hour (in minutes)) to be an integer, write a try-catch block to handle some exceptions.
+Limit the minutes from 0 to 1440. 
+Did have an idea about the loop for retype in the values if the typed-in value did not match the requirements.
+Discussed the tasks mentioned in class.
+
+3. Tuesday, September 16: Write the 1st idea about how the rewardPoint function should be. Thinking and trying about the rounding of the rewarded points. 
+Noted the ideas about ranking the points.
+
+4. Write the 1st draft about the pages and tasks that need to be done for the project.
+Finishing the ideas about the points, rounded points, and adding points to the original point system of the user.
+Noted and think about the possibility of typing in many activities at the same time//need further discussion with the team. 
+
