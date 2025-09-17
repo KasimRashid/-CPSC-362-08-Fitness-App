@@ -1,0 +1,10 @@
+//Task that we discussed on Discord last week
+/*Tasks included:
+1. Website's UI: including 4 different pages: Login page, Main, Rank (Achievement chart), Add achievements page (Type in page), 
+2. Database for username and password (Coding or SQL, deciding)
+3. Homepage (ranking page) for achievements.
+4. Add/edit (delete?) records/achievements.
+5. Create accounts for the website
+6. Finish the UI of the login page.
+
+We agreed that on Wednesday, September 17, we will discuss the database storage methods.*/
