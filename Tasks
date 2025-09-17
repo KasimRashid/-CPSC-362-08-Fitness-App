@@ -26,9 +26,12 @@ The need to divide the above general tasks into specific, smaller tasks is also 
 Allow users to compare activities with a drop-down for easier/user-friendly.
 
 The change from the direct activities to more general "titles" (work out, cardio) of the activities is expected and discussed by Kasim and Eric. 
-The basic code and the reward point system had been created, so the change in titles is not a huge problem.
+The basic code and the reward point system had been created, so the change in titles is not a huge problem. 
+ + The file name "TestingThuatToanFitness.sln" had been uploaded to Eric's branch as a first draft for other team members to have a look and provide advice for updates and changes.
+
 The front-end is expected to be created first, letting the functions write later in response to the buttons and objects that have been created.
 The basic code (type-in, reward points, and basic stuff about points and calculating them) and ideas can be found at Eric's personal (but public) project diary in Eric's branch.
+  
 The need to compare the points and activities/groups are also mentioned, but it is just an initial thoughts that is still vague and need to be further clarified.
 
 On 09/17, tasks given create back button, create the create account button, username and password inputs, 
