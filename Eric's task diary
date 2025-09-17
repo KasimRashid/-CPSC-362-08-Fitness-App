@@ -15,7 +15,8 @@ Noted the ideas about ranking the points.
 Write the 1st draft about the pages and tasks that need to be done for the project.
 Finishing the ideas about the points, rounded points, and adding points to the original point system of the user. 
 Divide points into original points, rewarded points, and new total points.
-Write the do-while loop for the input of weight and hours (in minutes). Fixed the rounding problem when the user typed in float-type values of weight and minutes.
+Write the do-while loop for the input of weight and hours (in minutes):  do-while when the type-in value is correct type, but out of range, and the type-in value is not in a correct form. 
+Fixed the rounding problem when the user typed in float-type values of weight and minutes.
 Noted, but not yet being specified, fixed the type-in decision that the user typed more achievements or not, but it works properly :D.
 Noted and think about the possibility of typing in many activities at the same time  //need further discussion with the team about the UI. 
 
