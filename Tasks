@@ -10,7 +10,7 @@
 
 3. Homepage (ranking page) for achievements.
 
-4. Add/edit (delete?) records/achievements.
+4. Add/edit/update records/achievements.
 
 5. Create accounts for the website
 
@@ -23,3 +23,6 @@ We agreed that on Wednesday, September 17, we will discuss the database storage 
 
 On 09/17, we also discussed the specified language that was used to create the UI: CSS and HTML. 
 The need to divide the above general tasks into specific, smaller tasks is also mentioned.
+
+On 09/17, tasks given create back button, create the create account button, username and password inputs, 
+inputting them into the map. 
