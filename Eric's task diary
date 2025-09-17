@@ -4,7 +4,8 @@ On this day, I also chose 5 different activities that are "common" and have diff
 
 2. Monday, September 15: Write about the input of hours and validate the input (hour (in minutes)) to be an integer, write a try-catch block to handle some exceptions.
 Limit the minutes from 0 to 1440. 
-Did have an idea about the loop for retype in the values if the typed-in value did not match the requirements.
+Did have an idea about the loop for retype in the values if the typed-in value did not match the requirements. 
+[Done September 17, for decision (type in more than one activity at a time), re-type invalid weight, minutes] 
 Discussed the tasks mentioned in class.
 
 3. Tuesday, September 16: Write the 1st idea about how the rewardPoint function should be. Thinking and trying about the rounding of the rewarded points. 
@@ -15,5 +16,6 @@ Write the 1st draft about the pages and tasks that need to be done for the proje
 Finishing the ideas about the points, rounded points, and adding points to the original point system of the user. 
 Divide points into original points, rewarded points, and new total points.
 Write the do-while loop for the input of weight and hours (in minutes). Fixed the rounding problem when the user typed in float-type values of weight and minutes.
-Noted and think about the possibility of typing in many activities at the same time//need further discussion with the team. 
+Noted, but not yet being specified, fixed the type-in decision that the user typed more achievements or not, but it works properly :D.
+Noted and think about the possibility of typing in many activities at the same time  //need further discussion with the team about the UI. 
 
