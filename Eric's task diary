@@ -10,7 +10,10 @@ Discussed the tasks mentioned in class.
 3. Tuesday, September 16: Write the 1st idea about how the rewardPoint function should be. Thinking and trying about the rounding of the rewarded points. 
 Noted the ideas about ranking the points.
 
-4. Write the 1st draft about the pages and tasks that need to be done for the project.
-Finishing the ideas about the points, rounded points, and adding points to the original point system of the user. Divide points into original points, rewarded points, and new total points.
+4. Wednesday, September 17: 
+Write the 1st draft about the pages and tasks that need to be done for the project.
+Finishing the ideas about the points, rounded points, and adding points to the original point system of the user. 
+Divide points into original points, rewarded points, and new total points.
+Write the do-while loop for the input of weight and hours (in minutes). Fixed the rounding problem when the user typed in float-type values of weight and minutes.
 Noted and think about the possibility of typing in many activities at the same time//need further discussion with the team. 
 
