@@ -25,7 +25,7 @@ On 09/17, we also discussed the specified language that was used to create the U
 The need to divide the above general tasks into specific, smaller tasks is also mentioned.
 Allow users to compare activities with a drop-down for easier/user-friendly.
 
-The change from the direct activities to more general "titles" (work out, activities) of the activities is expected and discussed by Kasim and Eric. 
+The change from the direct activities to more general "titles" (work out, cardio) of the activities is expected and discussed by Kasim and Eric. 
 The basic code and the reward point system had been created, so the change in titles is not a huge problem.
 The basic code and ideas can be found at Eric's personal (but public) project diary in Eric's branch.
 The need to compare the points and activities are also mentioned, but it is just an initial thoughts that is still vague and need to be more clarified.
