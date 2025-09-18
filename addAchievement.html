@@ -1,3 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <h1>this is the add Achievement button </h1>
+    <h1>Achivement page</h1>
+
+<Br>
+<big><label for="activities">Choose your activities:</label></big>
+<select id="myDropdown" name="myDropdown">
+  <option value="lifting weights">Lifting weights</option>
+  <option value="cardio">Cardio</option>
+  <option value="running (with or without machine)">Running</option>
+  <option value="activities" selected>choose activities</option>
+</select>
+
+<br>
+<big><label for="activities">How long?</label><big>
+<select id="myDropdown" name="myDropdown">
+  <option value="1-30 mins">Under or equal to 30 minutes</option>
+  <option value="31-60 mins (an hours)">From over half an hour to an hour</option>
+  <option value="61-90 mins">From over an hour to 1.5 hour</option>
+  <option value="91-120 mins">From 1.5 hours (90 mins) to 2 hours</option>
+  <option value="120-180 mins">From 2 hours to 3 hours</option>
+  <option value="time" selected>choose how long you workout</option>
+</select>
+
+<br>
+<body>
+<button id="previousPage">Back</button>
+
+<script>
+document.getElementById("previousPage").onclick = function() {
+            window.location.href = "homePage.html";
+        };
+</script>
+
+</body>
+
+//<a href="homePage.html">Homepage (direct HTML link)</a>
+<button>Next</button>
+
+</html> 
