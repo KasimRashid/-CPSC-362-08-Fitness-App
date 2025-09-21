@@ -3,28 +3,189 @@
     <h1>Achivement page</h1>
 
 <Br>
-<big><label for="activities">Choose your activities:</label></big>
-<select id="myDropdown" name="myDropdown">
+<body>
+<big><label for="fitnessActivities">Choose your activities:</label></big>
+<select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="lifting weights">Lifting weights</option>
   <option value="cardio">Cardio</option>
   <option value="running (with or without machine)">Running</option>
-  <option value="activities" selected>choose activities</option>
+  <option value="[not selected yet]" disabled selected>choose activities</option>
 </select>
 
-<br>
-<big><label for="activities">How long?</label><big>
-<select id="myDropdown" name="myDropdown">
-  <option value="1-30 mins">Under or equal to 30 minutes</option>
-  <option value="31-60 mins (an hours)">From over half an hour to an hour</option>
-  <option value="61-90 mins">From over an hour to 1.5 hour</option>
-  <option value="91-120 mins">From 1.5 hours (90 mins) to 2 hours</option>
-  <option value="120-180 mins">From 2 hours to 3 hours</option>
-  <option value="time" selected>choose how long you workout</option>
-</select>
+<h3 id="output" style="color: green; margin-top: 20px;"></h3>
+
+
+<form onsubmit="return false;">
+  <big><label for="weightInput">Please enter your weight in pound:</label><br></big>
+  <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4">
+  <br><button onclick="displayWeight()">Submit</button>
+</form>
+<h3 id="output3" style="color: blue; margin-top: 20px;"></h3>
+
+  <script>
+    function displayWeight() {
+      const weight = document.getElementById("weightInput").value;
+      const output3 = document.getElementById("output3");
+
+      if (weight > 0 && weight <= 1440) {
+        output3.innerText = "Your weight is: " + weight + " lbs";
+      } else {
+        output3.innerText = "Please enter a valid weight.";
+      }
+    }
+  </script>
 
 <br>
-<body>
-<button id="previousPage">Back</button>
+<big><label for="FitnessHour">How long?</label><big>
+<select id="FitnessHour" name="Hour" onchange="showSelected()">
+  <option value="0">0 hour</option>
+  <option value="1">1 hour</option>
+  <option value="2">2 hours</option>
+  <option value="3">3 hours</option>
+  <option value="4">4 hours</option>
+  <option value="5"> 5 hours</option>
+  <option value="6"> 6 hours</option>
+  <option value="7"> 7 hours</option>
+  <option value="8"> 8 hours</option>
+  <option value="9"> 9 hours</option>
+  <option value="10"> 10 hours</option>
+  <option value="11"> 11 hours</option>
+  <option value="12"> 12 hours</option>
+  <option value="13"> 13 hours</option>
+  <option value="14"> 14 hours</option>
+  <option value="15"> 15 hours</option>
+  <option value="16"> 16 hours</option>
+  <option value="17"> 17 hours</option>
+  <option value="18"> 18 hours</option>
+  <option value="19"> 19 hours</option>
+  <option value="20"> 20 hours</option>
+  <option value="21"> 21 hours</option>
+  <option value="22"> 22 hours</option>
+  <option value="23"> 23 hours</option>
+  <option value="24"> 24 hours</option>
+
+  <option value="time in" disabled selected>Choose hour amount</option>
+</select>
+
+
+<select id="FitnessMin" name="Minute" onchange="showSelected()">
+  <option value="0">0 minute</option>
+  <option value="1">1 minute</option>
+  <option value="2">2 minutes</option>
+  <option value="3">3 minutes</option>
+  <option value="4">4 minutes</option>
+  <option value="5"> 5 minutes</option>
+  <option value="6"> 6 minutes</option>
+  <option value="7"> 7 minutes</option>
+  <option value="8"> 8 minutes</option>
+  <option value="9"> 9 minutes</option>
+  <option value="10"> 10 minutes</option>
+  <option value="11"> 11 minutes</option>
+  <option value="12"> 12 minutes</option>
+  <option value="13"> 13 minutes</option>
+  <option value="14"> 14 minutes</option>
+  <option value="15"> 15 minutes</option>
+  <option value="16"> 16 minutes</option>
+  <option value="17"> 17 minutes</option>
+  <option value="18"> 18 minutes</option>
+  <option value="19"> 19 minutes</option>
+  <option value="20"> 20 minutes</option>
+  <option value="21"> 21 minutes</option>
+  <option value="22"> 22 minutes</option>
+  <option value="23"> 23 minutes</option>
+  <option value="24"> 24 minutes</option>
+  <option value="25"> 25 minutes</option>
+  <option value="26"> 26 minutes</option>
+  <option value="27"> 27 minutes</option>
+  <option value="28"> 28 minutes</option>
+  <option value="29"> 29 minutes</option>
+  <option value="30"> 30 minutes</option>
+  <option value="31"> 31 minutes</option>
+  <option value="32"> 32 minutes</option>
+  <option value="33"> 33 minutes</option>
+  <option value="34"> 34 minutes</option>
+  <option value="35"> 35 minutes</option>
+  <option value="36"> 36 minutes</option>
+  <option value="37"> 37 minutes</option>
+  <option value="38"> 38 minutes</option>
+  <option value="39"> 39 minutes</option>
+  <option value="40"> 40 minutes</option>
+  <option value="41"> 41 minutes</option>
+  <option value="42"> 42 minutes</option>
+  <option value="43"> 43 minutes</option>
+  <option value="44"> 44 minutes</option>
+  <option value="45"> 45 minutes</option>
+  <option value="46"> 46 minutes</option>
+  <option value="47"> 47 minutes</option>
+  <option value="48"> 48 minutes</option>
+  <option value="49"> 49 minutes</option>
+  <option value="50"> 50 minutes</option>
+  <option value="51"> 51 minutes</option>
+  <option value="52"> 52 minutes</option>
+  <option value="53"> 53 minutes</option>
+  <option value="54"> 54 minutes</option>
+  <option value="55"> 55 minutes</option>
+  <option value="56"> 56 minutes</option>
+  <option value="57"> 57 minutes</option>
+  <option value="58"> 58 minutes</option>
+  <option value="59"> 59 minutes</option>
+
+  <option value="time in" disabled selected>Choose minute amount</option>
+</select>
+
+<h3 id="output2" style="color: green; margin-top: 20px;"></h3>
+
+<script>
+    function showSelected() {
+      const dropdown = document.getElementById("fitnessActivities");
+      const selectedValueActivities = dropdown.value;
+
+      // "cout" to the screen by updating the innerText of the output element
+      const output = document.getElementById("output");
+      if (selectedValueActivities) {
+        output.innerText = "You selected: " + selectedValueActivities;
+      } else {
+        output.innerText = ""; // Clear output if no selection
+      }
+
+      const dropdown2 = document.getElementById("FitnessHour");
+      const selectedValueHour = dropdown2.value;
+
+      const dropdown3 = document.getElementById("FitnessMin");
+      const selectedValueMin = dropdown3.value;
+
+      // "cout" to the screen by updating the innerText of the output element
+      const output2 = document.getElementById("output2");
+      if (selectedValueHour && selectedValueMin) {
+        output2.innerText = "You selected: " + selectedValueHour + " hour(s) " + selectedValueMin + " minute(s)";
+      } else {
+        output2.innerText = ""; // Clear output if no selection
+      }
+    }
+</script>
+
+<form onsubmit="return false;">
+  <br><button onclick="displayPoint()">Calculate my point</button>
+  <br>
+  <big><label for="pointOutput">Your rewarded point:</label><br></big>   
+</form>
+
+<h3 id="output4" style="color: orange; margin-top: 20px;"></h3>
+
+  <script>
+    function displayPoint () {
+      const activities = document.getElementById("fitnessActivities").value;
+      const weight = document.getElementById("weightInput").value;
+      const hour = document.getElementById("FitnessHour").value;
+      const minute = document.getElementById("FitnessMin").value;
+
+      const point = weight * hour *minute;
+      const output4 = document.getElementById("output4");
+     output4.innerText = "Your point: " + point;
+    }
+  </script>
+
+<button id="previousPage">Back to Homepage</button>
 
 <script>
 document.getElementById("previousPage").onclick = function() {
