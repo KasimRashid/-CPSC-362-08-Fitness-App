@@ -26,3 +26,18 @@ Think about the ideas that there's a reward point for a continuous day of work o
 ---The need to download the "git" kit for easier downloading of project content.
 
 5. Thursday, September 18: 
+Basic HTML page for addArchivement.html page with fitness activities, "how long" length of time of fitness activities.
+Try the HTML Direct Link and the JavaScript button to link to the Homepage.
+
+6. Sunday, September 21:
+Added "weight" variable for the HTML page.
+Try to basically represent the Time in minutes and hours clearly.
+Fix to block/disable the chance to click the default values.
+Got the basic calculate button for the HTML page.
+Constrain the weight variable with both textfield key-limit and the variable limit (0-1440 lb).
+
+* Upcoming: 
+The constant k that handles different fitness activities, maybe skip the calculate button and make it automatically calculate the point, adding the denominator for the point system algorithm/formulas.
+Update the UI to be more synchronized (size, button, space between objects, and color of text and buttons).
+
+
