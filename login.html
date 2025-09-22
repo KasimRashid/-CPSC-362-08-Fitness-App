@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creating a New Account</title>
+  <title>Login Page</title>
 </head>
 <body>
   <div class="login-container">
-    <h2>Creating a New Account</h2>
-    <form id="registerForm">
+    <h2>Login</h2>
+    <form id="loginForm">
       <div class="input-group">
         <label for="username">Username</label>
         <input type="text" id="username" required>
@@ -17,14 +17,13 @@
         <label for="password">Password</label>
         <input type="password" id="password" required>
       </div>
+      <button type="submit">Login</button>
 
       <p id="message"></p>
-      <button type="submit">Create Account</button>
     </form>
-
-    <button type="button" onclick="BackButton()">Back</button>
-  </div>
-
-  <script src="createaccount.js"></script>
+     <button onclick="GoToCreateAccount()" type="create an account"> create an account </button>
+    </div>
+  <script src="login.js"></script>
+  
 </body>
 </html>
