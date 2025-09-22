@@ -57,9 +57,11 @@ On 09/17, Eric (Tien) was assigned to attempt to create the addachievement pages
 -----------------------------DISCUSSION ON 09/22-----------------------------------------------------------------------
 The need to keep some files private. The back and forth button is chosen instead of links. Need to center the UI components in the HTML files.
 The titles of the fitness activities chosen are: squatting, benching, and curling. The constant "k" will need to be redefined.
+There is one more textfield that is expected to be created: "weight lifting"
 There is an expectation that there are at least 5 fitness activities in the drop-down.
-The need for a chart to list the archivements and the sorting algorithm to sort the archivements.
-The background of the website's colors are expected to be black words, blue and white background.
-The need to store the record in the different accounts
+The need for a chart to list the achievements and a sorting algorithm to sort the achievements.
+The background of the website's colors is expected to be black words, blue and white background.
+The need to store the record in the different accounts.
+The ideas of creating the "junk" branches for draft files.
 Uploaded the newest HTML pages.
 
