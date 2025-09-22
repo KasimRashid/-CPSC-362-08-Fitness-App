@@ -54,7 +54,12 @@ inputting them into the map. - Fabian
 
 On 09/17, Eric (Tien) was assigned to attempt to create the addachievement pages.
 
------------------------------DISCUSSION ON 09/18-----------------------------------------------------------------------
-The need to keep some files private. Back and forth link instead of buttons.
-
+-----------------------------DISCUSSION ON 09/22-----------------------------------------------------------------------
+The need to keep some files private. The back and forth button is chosen instead of links. Need to center the UI components in the HTML files.
+The titles of the fitness activities chosen are: squatting, benching, and curling. The constant "k" will need to be redefined.
+There is an expectation that there are at least 5 fitness activities in the drop-down.
+The need for a chart to list the archivements and the sorting algorithm to sort the archivements.
+The background of the website's colors are expected to be black words, blue and white background.
+The need to store the record in the different accounts
+Uploaded the newest HTML pages.
 
