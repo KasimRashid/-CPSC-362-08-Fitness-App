@@ -40,4 +40,16 @@ Constrain the weight variable with both textfield key-limit and the variable lim
 The constant k that handles different fitness activities, maybe skip the calculate button and make it automatically calculate the point, adding the denominator for the point system algorithm/formulas.
 Update the UI to be more synchronized (size, button, space between objects, and color of text and buttons).
 
+6. Monday, September 22:
+Centered the UI components.
+Different k constant for each of the fitness activities.
+Block the text fields and drop-down menus after performing the calculations.
+Rounding and setting the constant that is used to divide in the code (5000).
+
+*Upcoming:
+Fixing some titles of the fitness activities.
+Create a basic chart that stores the values of the archviments,
+Expected to connect each of the profiles' account archives to that user only.
+
+
 
