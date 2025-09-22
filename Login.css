@@ -1,0 +1,40 @@
+* {
+  margin: 25;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 179, 0);
+  border-color: blue;
+
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(159, 0, 0);
+
+    background-image: url("pic.jpg");
+
+ 
+  background-size: cover;     
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+/*
+  background-image: url("your-image.jpg");
+
+ 
+  background-size: cover;     
+  background-position: center;
+  background-repeat: no-repeat; */ 
+/*
+.login-container h1 {
+  color: #e31818;
+  margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+*/
