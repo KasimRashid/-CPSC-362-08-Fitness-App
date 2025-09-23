@@ -1,10 +1,26 @@
-<center>
 <!DOCTYPE html>
 <html lang="en">
-    <h1>Achievement page</h1>
+<center>
+  <h1 style="font-family:fantasy;">Achievement</h1>
+
+<button id="previousPage">Back to Homepage</button>
+
+<script>
+document.getElementById("previousPage").onclick = function() {
+            window.location.href = "homePage.html";
+        };
+</script>
+<button>Next page</button>
 
 <Br>
 <body style="background-color: lightblue;">
+
+<div class="container">
+  <div class="image-box">
+    <img src="trophy.png" width="200" height="300" alt="Anime Trophy">
+  </div>
+
+<div class="form-box">
 <big><label for="fitnessActivities">Choose your activities:</label></big>
 <select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="squatting">Squatting</option>
@@ -15,7 +31,7 @@
   <option value="[not selected yet]" disabled selected>choose activities</option>
 </select>
 
-<h3 id="output" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
 
 <form onsubmit="return false;">
@@ -23,7 +39,7 @@
   <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4"> <!--allow autocomplete/fill-->
   <br><button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
 </form>
-<h3 id="output3" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output3" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
 <br> 
 <form onsubmit="return false;">
@@ -31,7 +47,7 @@
   <input type="text" id="weightLiftInput" name="myText" placeholder="Type here..." maxlength="3" autocomplete="off">
   <br><button onclick="displayLiftedWeight()">Submit</button>
 </form>
-<h3 id="output5" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output5" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
   <script>
     function displayWeight() {
@@ -59,7 +75,7 @@
   </script>
 
 <br>
-<big><label for="FitnessHour">How long?</label><big>
+<big><label for="FitnessHour">How long?</label></big>
 <select id="FitnessHour" name="Hour" onchange="showSelected()">
   <option value="0">0 hour</option>
   <option value="1">1 hour</option>
@@ -156,7 +172,7 @@
   <option value="time in" disabled selected>Choose minute amount</option>
 </select>
 
-<h3 id="output2" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output2" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
 <script>
     let kValue = 0;
@@ -206,10 +222,10 @@
   <br><button id="calculation" onclick="displayPoint()">Calculate my point</button>
   <button id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
   <br>
-  <big><label for="pointOutput">Your rewarded point:</label><br></big>  
+  <red><label for="pointOutput">Your rewarded point:</label><br></red>  
 </form>
 
-<h3 id="output4" style="color: orange; margin-top: 20px;"></h3>
+<h3 id="output4" style="color: orange; margin-top: 20px; font-family:fantasy;"></h3>
 
   <script>
     function displayPoint () {
@@ -256,19 +272,40 @@ function unblockTypeIn () {
   output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
 }
 </script>
-<button id="previousPage">Back to Homepage</button>
-
-<script>
-document.getElementById("previousPage").onclick = function() {
-            window.location.href = "homePage.html";
-        };
-</script>
 
 </body>
 <button>Add Achievement</button>
 <!--<a href="homePage.html">Homepage (direct HTML link)</a>-->
-<button>Next page</button>
+
+</html> 
+</div>
+
+<style>
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* gap*/
+  padding: 20px;
+}
+
+.image-box img {
+  position: absolute; /*not move when using drop-down and buttons)*/
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.form-box {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  color: #333;
+}
+</style>
+
+</center>
 
 </html> 
 
 </center>
+
