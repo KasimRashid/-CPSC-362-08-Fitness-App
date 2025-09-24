@@ -1,4 +1,5 @@
 
-function AddAchievement(){
-    window.location.href = "AddAchievement.html";
+function addAchievement(){
+    window.location.href = "addAchievement.html";
+
   }
