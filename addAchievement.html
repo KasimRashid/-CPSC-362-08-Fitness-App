@@ -1,42 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <h1>Achivement page</h1>
+<center>
+  <h1 style="font-family:fantasy;">Achievement</h1>
+
+<button id="previousPage">Back to Homepage</button>
+
+<script>
+document.getElementById("previousPage").onclick = function() {
+            window.location.href = "homePage.html";
+        };
+</script>
+<button>Next page</button>
 
 <Br>
-<body>
+<body style="background-color: lightblue;">
+
+<div class="container">
+  <div class="image-box">
+    <img src="trophy.png" width="200" height="300" alt="Anime Trophy">
+  </div>
+
+<div class="form-box">
 <big><label for="fitnessActivities">Choose your activities:</label></big>
 <select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
-  <option value="lifting weights">Lifting weights</option>
-  <option value="cardio">Cardio</option>
-  <option value="running (with or without machine)">Running</option>
+  <option value="squatting">Squatting</option>
+  <option value="benching">Benching</option>
+  <option value="curling">Curling</option>
+  <option value="leg pressing">Leg pressing</option>
+  <option value="deadlifting">Deadlifting</option>
   <option value="[not selected yet]" disabled selected>choose activities</option>
 </select>
 
-<h3 id="output" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
 
 <form onsubmit="return false;">
-  <big><label for="weightInput">Please enter your weight in pound:</label><br></big>
-  <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4">
-  <br><button onclick="displayWeight()">Submit</button>
+  <big><label for="weightInput">Please enter your weight, in pound:</label><br></big>
+  <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4"> <!--allow autocomplete/fill-->
+  <br><button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
 </form>
-<h3 id="output3" style="color: blue; margin-top: 20px;"></h3>
+<h3 id="output3" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
+
+<br> 
+<form onsubmit="return false;">
+  <big><label for="weightLiftInput">How much weight you lift, in pound:</label><br></big>
+  <input type="text" id="weightLiftInput" name="myText" placeholder="Type here..." maxlength="3" autocomplete="off">
+  <br><button onclick="displayLiftedWeight()">Submit</button>
+</form>
+<h3 id="output5" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
   <script>
     function displayWeight() {
       const weight = document.getElementById("weightInput").value;
       const output3 = document.getElementById("output3");
 
-      if (weight > 0 && weight <= 1440) {
+      if (weight > 0 && weight <= 1440) { //1440 lb is world-record
         output3.innerText = "Your weight is: " + weight + " lbs";
       } else {
         output3.innerText = "Please enter a valid weight.";
       }
     }
+
+    function displayLiftedWeight() {
+      const weightLifted = document.getElementById("weightLiftInput").value;
+      const output5 = document.getElementById("output5");
+
+      if (weightLifted > 0 && weightLifted <= 5340) { //5340 is world-record
+        output5.innerText = "You lifted: " + weightLifted + " lbs";
+      } else {
+        output5.innerText = "Please enter a valid weight.";
+      }
+    }
+
   </script>
 
 <br>
-<big><label for="FitnessHour">How long?</label><big>
+<big><label for="FitnessHour">How long?</label></big>
 <select id="FitnessHour" name="Hour" onchange="showSelected()">
   <option value="0">0 hour</option>
   <option value="1">1 hour</option>
@@ -133,9 +172,10 @@
   <option value="time in" disabled selected>Choose minute amount</option>
 </select>
 
-<h3 id="output2" style="color: green; margin-top: 20px;"></h3>
+<h3 id="output2" style="color: green; margin-top: 20px; font-family:fantasy;"></h3>
 
 <script>
+    let kValue = 0;
     function showSelected() {
       const dropdown = document.getElementById("fitnessActivities");
       const selectedValueActivities = dropdown.value;
@@ -144,6 +184,20 @@
       const output = document.getElementById("output");
       if (selectedValueActivities) {
         output.innerText = "You selected: " + selectedValueActivities;
+          if (selectedValueActivities === "squatting")
+		{ kValue = 3.63;}
+	else if(selectedValueActivities === "benching")
+		{ kValue = 2.72;}
+	else if(selectedValueActivities === "curling")
+		{ kValue = 2.04;}
+	else if(selectedValueActivities === "leg pressing")
+		{ kValue = 2.61;}
+	else if(selectedValueActivities === "deadlifting")
+		{ kValue = 3.86;}
+	else
+		{ 
+		 output.innerText = "Error :(";
+		kValue = -1;}
       } else {
         output.innerText = ""; // Clear output if no selection
       }
@@ -165,37 +219,94 @@
 </script>
 
 <form onsubmit="return false;">
-  <br><button onclick="displayPoint()">Calculate my point</button>
+  <br><button id="calculation" onclick="displayPoint()">Calculate my point</button>
+  <button id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
   <br>
-  <big><label for="pointOutput">Your rewarded point:</label><br></big>   
+  <red><label for="pointOutput">Your rewarded point:</label><br></red>  
 </form>
 
-<h3 id="output4" style="color: orange; margin-top: 20px;"></h3>
+<h3 id="output4" style="color: orange; margin-top: 20px; font-family:fantasy;"></h3>
 
   <script>
     function displayPoint () {
+
       const activities = document.getElementById("fitnessActivities").value;
       const weight = document.getElementById("weightInput").value;
       const hour = document.getElementById("FitnessHour").value;
       const minute = document.getElementById("FitnessMin").value;
+      const weightLifted = document.getElementById("weightLiftInput").value;
 
-      const point = weight * hour *minute;
+      const point = Math.round((weight * 60 * hour *minute * kValue * weightLifted)/7000000);
       const output4 = document.getElementById("output4");
      output4.innerText = "Your point: " + point;
     }
-  </script>
+document.getElementById("calculation").addEventListener("click", function() {
+  // Disable all text inputs
+  const textFields = document.querySelectorAll('input');
+  textFields.forEach(field => field.disabled = true);
 
-<button id="previousPage">Back to Homepage</button>
-
+  // Disable all drop-downs
+  const dropdowns = document.querySelectorAll('select');
+  dropdowns.forEach(menu => menu.disabled = true);
+}); 
+ </script>
 <script>
-document.getElementById("previousPage").onclick = function() {
-            window.location.href = "homePage.html";
-        };
+function unblockTypeIn () {
+ 
+   // Unblock all text inputs
+   const textFields2 = document.querySelectorAll('input');
+   textFields2.forEach(field => field.disabled = false);
+
+   // Unblock all drop-downs
+   const dropdowns2 = document.querySelectorAll('select');
+   dropdowns2.forEach(menu => menu.disabled = false);
+   
+  document.getElementById("fitnessActivities").value ="";
+  //Leave the weight alone :D, block the button :D
+  document.getElementById("weightInput").disabled =true;
+  document.getElementById("yourWeightSubmitButton").disabled =true;
+
+  document.getElementById("FitnessHour").value="";
+  document.getElementById("FitnessMin").value="";
+  document.getElementById("weightLiftInput").value="";
+  output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
+}
 </script>
 
 </body>
-
-//<a href="homePage.html">Homepage (direct HTML link)</a>
-<button>Next</button>
+<button>Add Achievement</button>
+<!--<a href="homePage.html">Homepage (direct HTML link)</a>-->
 
 </html> 
+</div>
+
+<style>
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* gap*/
+  padding: 20px;
+}
+
+.image-box img {
+  position: absolute; /*not move when using drop-down and buttons)*/
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.form-box {
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+  color: #333;
+}
+</style>
+
+</center>
+
+</html> 
+
+</center>
+
+
