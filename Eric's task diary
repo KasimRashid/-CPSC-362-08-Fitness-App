@@ -51,5 +51,19 @@ Fixing some titles of the fitness activities.
 Create a basic chart that stores the values of the archviments,
 Expected to connect each of the profiles' account archives to that user only.
 
+Try to divide the form and picture into different components of the HTML page.
+Try to put the achievement on the table.
+Finished chosen activities and the extra textfield for "how much weight you lift".
+Try to fix the font type and size, and unify the color of the announcement.
+Plan and tried to hold the picture in the absolute location on the page.
+
+*Upcoming:
+Try to input a maximum of 3 activities in the chart
+Figure out how to sort the chart by reward points
+Thinking about how to round the pound in decimal form into a whole integer.
+Change the position of the next page and homepage button to the upper corner, while maybe add a direct HTML link in the lower corner of the achievement page.
+Discuss the unity in background color, font type, color, and button names in the whole project.
+
+
 
 
