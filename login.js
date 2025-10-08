@@ -1,3 +1,4 @@
+
 function GoToCreateAccount(){
     window.location.href = "createaccount.html";
   }
@@ -12,12 +13,14 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 
   if (username === "Admin" && password === "Admin1") {
+    localStorage.setItem("currentUser", username);
     window.location.href = "homePage.html"
     message.style.color = "green";
     message.textContent = " You are in !";
     window.location.href = "homepage.html";
   }
   if (accounts[username] && accounts[username].password === password) {
+    localStorage.setItem("currentUser", username);
     message.style.color = "green";
     message.textContentn = "You are in !"
     window.location.href = "homepage.html"
@@ -27,4 +30,3 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   }
 
 });
-
