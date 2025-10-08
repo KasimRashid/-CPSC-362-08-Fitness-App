@@ -1,24 +1,40 @@
-//Version Sep 29, 2025 11:50 TESTING
+//Version Oct 8, 10:36 Official
 <!DOCTYPE html>
 <html lang="en">
 <body style="background-color: #BBDEFB;">
-<center>
-  <h1 class="gradient">Achievement</span>
-</h1>
-<Br>
-<button id="previousPageButton" class="page-button">Back to Homepage</button>
-<button id="nextPageButton" class="page-button">Next page</button>
-
-</center>
+<div class="header">
+  <h1 class="title">ACHIEVEMENT</h1>
+  <div class="page-buttons-group">
+    <button id="previousPageButton" class="page-button">Back to Homepage</button>
+    <!--<button id="nextPageButton" class="page-button">Next page</button>-->
+  </div>
+</div>
 
 <style>
-.gradient{
-  background: linear-gradient(to right, #FFD700, #FF4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.page-buttons-group {
+  display: flex;
+  gap: 10px; /*gap btw buttons*/
+  margin-top: 0px;
+}
+
+.title {
+  background-color: #1F618D; /* blue */
+  line-height: 50px;
+  -webkit-text-fill-color: transparent; /*colored the word with color above*/
   background-clip: text;
   text-fill-color: transparent;
   display: inline-block;
+  font-size: 50px;
+  font-family: 'Nunito', Nunito;
+  font-weight: 700; /*bolder the text*/
+  margin-bottom: 5px; /*keep title and buttons have accepable gap*/
 }
 
 .container {
@@ -69,6 +85,12 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.text{
+color = #1F618D;
+font-size: 22px;
+font-family: "Verdana", Tahoma;
+}
+
 .button {
   background-color: #1F618D; /* blue */
   color: white;
@@ -82,6 +104,21 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.button-red {
+  background-color: #D03D2F; /* same as button, just red :D */
+  color: white;
+  border: none;
+  padding: 5px 8px; /* smaller button than total, same size as page-button */
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+  font-weight: bold; /* makes the text bold */
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 
 .button:disabled {
   background-color: #cccccc; /* light gray */
@@ -127,7 +164,7 @@ document.getElementById("previousPageButton").onclick = function() {
 </div>
 
 <div class="form-box">
-<big><label for="fitnessActivities">Choose your activities:</label></big>
+<big><label for="fitnessActivities" class="text">Choose your activities:</label></big>
 <select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="[not selected yet]" disabled selected>choose activities</option> <!--must be 1st option-->
   <option value="squatting">Squatting</option>
@@ -141,14 +178,14 @@ document.getElementById("previousPageButton").onclick = function() {
 <h3 id="output" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightInput">Please enter your weight, in pound:</label><br></big>
+  <big><label for="weightInput" class="text">Please enter your weight, in pound:</label><br></big>
   <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
   <button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
 </form>
 <h3 id="output3" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>
+  <big><label for="weightLiftInput" class="text">How much weight do you lift, in pound:</label><br></big>
   <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
   <button onclick="displayLiftedWeight()">Submit</button>
 </form>
@@ -179,7 +216,7 @@ document.getElementById("previousPageButton").onclick = function() {
 </script>
 
 <form onsubmit="return false;">
-  <big><label for="liftRepsInput">How many reps:</label><br></big>
+  <big><label for="liftRepsInput" class="text">How many reps:</label><br></big>
   <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
   <button onclick="displayLiftReps()">Submit</button>
 </form>
@@ -240,7 +277,7 @@ table, th, td {
 </table>
 
 <button id="sumPoint" class="sum-button" onclick="calculateSumPoint()">Total Point</button>
-<h3 id="outputSumPoint" style="color: red; margin-top: 20px; font-family:fantasy;"></h3>
+<h3 id="outputSumPoint" class="text" style="color: red; margin-top: 20px; font-family:fantasy;"></h3>
 </div>
 
 <script>
@@ -321,8 +358,21 @@ function calculate() {
   const reps = parseInt(document.getElementById("liftRepsInput").value);
 
   //valid? //Need to update the calculate button to check requirements then remove submit buttons
-  if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)) {
+  if (!activities || isNaN(weight) || weight <= 0 || weight >= 1440 || 
+      isNaN(weightLifted) || weightLifted <=0 || weightLifted > 5340 ||
+      isNaN(reps) || reps <=0 || reps >100) {
     alert("Please fill in all fields correctly.");
+   
+  document.getElementById("fitnessActivities").value ="";
+  document.getElementById("weightInput").value="";
+  document.getElementById("liftRepsInput").value="";
+  document.getElementById("weightLiftInput").value="";
+
+  const output4 = document.getElementById("output4");
+  output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
+  outputSumPoint.innerText = "";//Clear the "total point" 
+  
+   button.innerHTML = "Calculate"
     return;
   }
   
