@@ -1,0 +1,69 @@
+Tien (Eric)'s project diary:
+1. Saturday, September 12: Create the C++ file and test the ability to add activities, after a long discussion and ideas about how it should be. Try to put out on the screen the activities.
+On this day, I also chose 5 different activities that are "common" and have different k values.
+
+2. Monday, September 15: Write about the input of hours and validate the input (hour (in minutes)) to be an integer, write a try-catch block to handle some exceptions.
+Limit the minutes from 0 to 1440. 
+Did have an idea about the loop for retype in the values if the typed-in value did not match the requirements. 
+[Done September 17, for decision (type in more than one activity at a time), re-type invalid weight, minutes] 
+Discussed the tasks mentioned in class.
+
+3. Tuesday, September 16: Write the 1st idea about how the rewardPoint function should be. Thinking and trying about the rounding of the rewarded points. 
+Noted the ideas about ranking the points.
+
+4. Wednesday, September 17: 
+Write the 1st draft about the pages and tasks that need to be done for the project.
+Finishing the ideas about the points, rounded points, and adding points to the original point system of the user. 
+Divide points into original points, rewarded points, and new total points.
+Write the do-while loop for the input of weight and hours (in minutes):  do-while when the type-in value is correct, but out of range, and the type-in value is not in a correct form. 
+Fixed the rounding problem when the user typed in float-type values of weight and minutes.
+
+Noted, but not yet being specified, fixed the type-in decision that the user typed more achievements or not, but it works properly :D.
+Noted and think about the possibility of typing in many activities at the same time  //need further discussion with the team about the UI. 
+Think about the ideas of the limitation of points per date to reduce abuse of the system and reduce the negative health impact of overworking.
+Think about the ideas that there's a reward point for a continuous day of work out/activities //need to discuss further.
+
+---The need to download the "git" kit for easier downloading of project content.
+
+5. Thursday, September 18: 
+Basic HTML page for addArchivement.html page with fitness activities, "how long" length of time of fitness activities.
+Try the HTML Direct Link and the JavaScript button to link to the Homepage.
+
+6. Sunday, September 21:
+Added "weight" variable for the HTML page.
+Try to basically represent the Time in minutes and hours clearly.
+Fix to block/disable the chance to click the default values.
+Got the basic calculate button for the HTML page.
+Constrain the weight variable with both textfield key-limit and the variable limit (0-1440 lb).
+
+* Upcoming: 
+The constant k that handles different fitness activities, maybe skip the calculate button and make it automatically calculate the point, adding the denominator for the point system algorithm/formulas.
+Update the UI to be more synchronized (size, button, space between objects, and color of text and buttons).
+
+6. Monday, September 22:
+Centered the UI components.
+Different k constant for each of the fitness activities.
+Block the text fields and drop-down menus after performing the calculations.
+Rounding and setting the constant that is used to divide in the code (5000).
+
+*Upcoming:
+Fixing some titles of the fitness activities.
+Create a basic chart that stores the values of the archviments,
+Expected to connect each of the profiles' account archives to that user only.
+
+Try to divide the form and picture into different components of the HTML page.
+Try to put the achievement on the table.
+Finished chosen activities and the extra textfield for "how much weight you lift".
+Try to fix the font type and size, and unify the color of the announcement.
+Plan and tried to hold the picture in the absolute location on the page.
+
+*Upcoming:
+Try to input a maximum of 3 activities in the chart
+Figure out how to sort the chart by reward points
+Thinking about how to round the pound in decimal form into a whole integer.
+Change the position of the next page and homepage button to the upper corner, while maybe add a direct HTML link in the lower corner of the achievement page.
+Discuss the unity in background color, font type, color, and button names in the whole project.
+
+
+
+
