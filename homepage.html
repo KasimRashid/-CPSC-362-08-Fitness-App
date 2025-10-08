@@ -1,8 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<script src="homePage.js"></script>
-  <div>
-<button onclick="addAchievement()" type="Add a new Achievement"> Add a new Achievement </button>
 
-</div>
-<h>this is the home page</h>
+<!doctype html>
+<html lang="en">
+<head>
+  <script src="homepage.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title> Fitness app </title>
+<!--  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="homePage.css">
+
+</head>
+
+<body>
+  
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">fitness App</h1>
+      <h1 id="welcome"></h1>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">top scores </a>
+        <a href="#">your Achievement</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h2>Train Smarter. Move Happier.</h2>
+
+        <a class="btn" href="#">Add a new Achievement</a>
+        <button onclick="addAchievement()" type="Add a new Achievement"> Add a new Achievement </button>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>App Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>login</h3>
+            <p>back to login</p>
+          </div>
+          <div class="feature-card">
+            <h3>your Achievement</h3>
+            <p>see your Achievement</p>
+          </div>
+          <div class="feature-card">
+
+          <div class="feature-card">
+            <h3>top Achievement</h3>
+            <p>view the top Achievements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="plans">
+
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <h2>Ready to start your journey?</h2>
+        <a class="btn" href="#">Download the App</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 fitness app. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
