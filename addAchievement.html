@@ -1,4 +1,4 @@
-//Version Sep 28, 2025 12:05 OFFICIAL
+//Version Oct 7, 23:53
 <!DOCTYPE html>
 <html lang="en">
 <body style="background-color: #BBDEFB;">
@@ -83,6 +83,21 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.button-red {
+  background-color: #D03D2F; /* same as button, just red :D */
+  color: white;
+  border: none;
+  padding: 5px 8px; /* smaller button than total, same size as page-button */
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+  font-weight: bold; /* makes the text bold */
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
 .button:disabled {
   background-color: #cccccc; /* light gray */
   color: #090D10; /* black */
@@ -103,6 +118,15 @@
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"], input[type="number"], input[type="email"], select {
+  outline: none;  
+  border-radius: 10px;       
+  border: 1px solid blue; 
+  padding: 6px;              
+  
+           
 }
 </style>
 
@@ -311,9 +335,22 @@ function calculate() {
   const weightLifted = parseFloat(document.getElementById("weightLiftInput").value);
   const reps = parseInt(document.getElementById("liftRepsInput").value);
 
-  //valid?
-  if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)) {
+  //valid? //Need to update the calculate button to check requirements then remove submit buttons
+  if (!activities || isNaN(weight) || weight <= 0 || weight >= 1440 || 
+      isNaN(weightLifted) || weightLifted <=0 || weightLifted > 5340 ||
+      isNaN(reps) || reps <=0 || reps >100) {
     alert("Please fill in all fields correctly.");
+   
+  document.getElementById("fitnessActivities").value ="";
+  document.getElementById("weightInput").value="";
+  document.getElementById("liftRepsInput").value="";
+  document.getElementById("weightLiftInput").value="";
+
+  const output4 = document.getElementById("output4");
+  output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
+  outputSumPoint.innerText = "";//Clear the "total point" 
+  
+   button.innerHTML = "Calculate"
     return;
   }
   
@@ -358,8 +395,9 @@ function calculateSumPoint() {
     }
   const outputSumPoint = document.getElementById("outputSumPoint");
   document.getElementById("outputSumPoint").innerText = "Your total point: " + sum;
+ 
   }
-  
+   localStorage.setItem("totalPointAddAchievement", sum);
 }
 </script>
 <script>
@@ -370,4 +408,3 @@ window.onload = function() {
 </script>
 </body>
 </html>
-
