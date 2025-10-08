@@ -14,13 +14,30 @@
 
 
 <style>
-.gradient{
-  background: linear-gradient(to right, #FFD700, #FF4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.page-buttons-group {
+  display: flex;
+  gap: 10px; /*gap btw buttons*/
+  margin-top: 0px;
+}
+
+.title {
+  background-color: #1F618D; /* blue */
+  line-height: 50px;
+  -webkit-text-fill-color: transparent; /*colored the word with color above*/
   background-clip: text;
   text-fill-color: transparent;
   display: inline-block;
+  font-size: 50px;
+  font-family: 'Nunito', Nunito;
+  font-weight: 700; /*bolder the text*/
+  margin-bottom: 5px; /*keep title and buttons have accepable gap*/
 }
 
 .container {
@@ -71,6 +88,12 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.text{
+color = #1F618D;
+font-size: 22px;
+font-family: "Verdana", Tahoma;
+}
+
 .button {
   background-color: #1F618D; /* blue */
   color: white;
@@ -84,6 +107,21 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.button-red {
+  background-color: #D03D2F; /* same as button, just red :D */
+  color: white;
+  border: none;
+  padding: 5px 8px; /* smaller button than total, same size as page-button */
+  font-size: 16px;
+  font-family: "Times New Roman", serif;
+  font-weight: bold; /* makes the text bold */
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 
 .button:disabled {
   background-color: #cccccc; /* light gray */
@@ -105,6 +143,15 @@
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="text"], input[type="number"], input[type="email"], select {
+  outline: none;  
+  border-radius: 10px;       
+  border: 1px solid blue; 
+  padding: 6px;              
+  
+           
 }
 </style>
 
