@@ -1,14 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<body style="background-color: #BBDEFB;">
+
+<head><!--Copy from Kasim's Homepage-->
+  <!--<script src="addAchievement.js"></script>-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fitness App: Add Achievement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="addAchievement.css">
+
+</head>
+<body>
 <center>
   <h1 class="gradient">Achievement</h1>
   <h2 id="welcome" style="text-align:center; font-family:'Times New Roman', serif; color:#1F618D;"></h2>
 
 <Br>
-<button id="previousPageButton" class="page-button">Back to Homepage</button>
-<button id="nextPageButton" class="page-button">Next page</button>
+<button class="page-btn" id="previousPageButton">Back to Homepage</button> <!--href is for attribute (a tag)-->
+<button class="page-btn" id="nextPageButton">Next page</button> 
 
 </center>
 
@@ -122,7 +131,6 @@ font-family: "Verdana", Tahoma;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-
 .button:disabled {
   background-color: #cccccc; /* light gray */
   color: #090D10; /* black */
@@ -167,7 +175,10 @@ document.getElementById("previousPageButton").onclick = function() {
 </div>
 
 <div class="form-box">
-<big><label for="fitnessActivities">Choose your activities:</label></big>
+<!--<big><label for="fitnessActivities">Choose your activities:</label></big>-->
+<p style="display: inline;"><big>Choose your activities:</big></p> <!--Big inside p, delete label for attribute p to active-->
+
+<!--Not fix this one, because the item MUST have name to calculate!!-->
 <select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="[not selected yet]" disabled selected>choose activities</option> <!--must be 1st option-->
   <option value="squatting">Squatting</option>
@@ -181,14 +192,16 @@ document.getElementById("previousPageButton").onclick = function() {
 <h3 id="output" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightInput">Please enter your weight, in pound:</label><br></big>
+  <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
+  <p><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
   <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
   <button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
 </form>
 <h3 id="output3" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>
+  <!--<big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>-->
+ <p><big>How much weight do you lift, in pound:<br></big></p>
   <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
   <button onclick="displayLiftedWeight()">Submit</button>
 </form>
@@ -219,7 +232,8 @@ document.getElementById("previousPageButton").onclick = function() {
 </script>
 
 <form onsubmit="return false;">
-  <big><label for="liftRepsInput">How many reps:</label><br></big>
+  <!--<big><label for="liftRepsInput">How many reps:</label><br></big>-->
+  <p><big>How many reps:<br></big></p>
   <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
   <button onclick="displayLiftReps()">Submit</button>
 </form>
@@ -248,7 +262,8 @@ document.getElementById("previousPageButton").onclick = function() {
   <button class="button" id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
   <button class="button" id="addAchievementButton" onclick="addAchievements()">Add Achievement</button>
   <br>
-  <red><label for="pointOutput">Your rewarded point:</label><br></red>  
+  <!--<red><label for="pointOutput">Your rewarded point:</label><br></red>-->
+  <p><red><big>Your rewarded point:</big><br></red></p>
 </form>
 
 <h3 id="output4" style="color: orange; margin-top: 20px; font-family:fantasy;"></h3>
@@ -279,7 +294,7 @@ table, th, td {
   </tbody>
 </table>
 
-<button id="sumPoint" class="sum-button" onclick="calculateSumPoint()">Total Point</button>
+<button id="sumPoint" class="btn" onclick="calculateSumPoint()">Total Point</button>
 <h3 id="outputSumPoint" style="color: red; margin-top: 20px; font-family:fantasy;"></h3>
 </div>
 
