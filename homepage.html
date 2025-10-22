@@ -24,7 +24,40 @@
       </nav>
     </div>
   </header>
+  <h2>All users Achievements</h2>
+  <table id="userAchievementsTable" border="1">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Activity</th>
+        <th>Weight</th>
+        <th>Lifted</th>
+        <th>Reps</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <p id="totalPoints" style="font-weight: bold;"></p>
+    <section id="userAchievementsSection" style="display:none; margin-top:30px;">
+    <h2>Your Achievements</h2>
+    <table id="personalAchievementsTable" border="1">
+      <thead>
+        <tr>
+          <th>Activity</th>
+          <th>Weight</th>
+          <th>Lifted</th>
+          <th>Reps</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p id="personalTotalPoints" style="font-weight:bold;"></p>
+  </section>
 
+  
   <main>
     <section class="hero">
       <div class="container hero-inner">
@@ -43,7 +76,7 @@
             <h3>login</h3>
             <p>back to login</p>
           </div>
-          <div class="feature-card">
+          <div class="feature-card" id="yourAchievementCard">
             <h3>your Achievement</h3>
             <p>see your Achievement</p>
           </div>
