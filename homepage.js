@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
   tableBody.innerHTML = "";
 
   if (Object.keys(data).length === 0) {
-    tableBody.innerHTML = `<tr><td colspan="6">No achievements yet. Go earn some 💪</td></tr>`;
+    tableBody.innerHTML = `<tr><td colspan="6">No achievements yet. Go earn some </td></tr>`;
     return;
   }
 
@@ -88,3 +88,4 @@ document.getElementById("yourAchievementCard").onclick = function() {
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
   totalDiv.textContent = `Total Points: ${totalPoints}`;
 };
+
