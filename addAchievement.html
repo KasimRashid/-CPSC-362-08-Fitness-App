@@ -1,24 +1,53 @@
-//Version Oct 7, 23:53
+//Version Oct 22, 23:53
 <!DOCTYPE html>
 <html lang="en">
-<body style="background-color: #BBDEFB;">
+
+<head><!--Copy from Kasim's Homepage-->
+  <!--<script src="addAchievement.js"></script>-->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fitness App: Add Achievement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="addAchievement.css">
+
+</head>
+<body>
 <center>
-  <h1 class="gradient">Achievement</span>
-</h1>
+  <h1 class="gradient">Achievement</h1>
+  <h2 id="welcome" style="text-align:center; font-family:'Times New Roman', serif; color:#1F618D;"></h2>
+
 <Br>
-<button id="previousPageButton" class="page-button">Back to Homepage</button>
-<button id="nextPageButton" class="page-button">Next page</button>
+<button class="page-btn" id="previousPageButton">Back to Homepage</button> <!--href is for attribute (a tag)-->
+<button class="page-btn" id="nextPageButton">Next page</button> 
 
 </center>
 
+
 <style>
-.gradient{
-  background: linear-gradient(to right, #FFD700, #FF4500);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+}
+
+.page-buttons-group {
+  display: flex;
+  gap: 10px; /*gap btw buttons*/
+  margin-top: 0px;
+}
+
+.title {
+  background-color: #1F618D; /* blue */
+  line-height: 50px;
+  -webkit-text-fill-color: transparent; /*colored the word with color above*/
   background-clip: text;
   text-fill-color: transparent;
   display: inline-block;
+  font-size: 50px;
+  font-family: 'Nunito', Nunito;
+  font-weight: 700; /*bolder the text*/
+  margin-bottom: 5px; /*keep title and buttons have accepable gap*/
 }
 
 .container {
@@ -69,6 +98,12 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.text{
+color = #1F618D;
+font-size: 22px;
+font-family: "Verdana", Tahoma;
+}
+
 .button {
   background-color: #1F618D; /* blue */
   color: white;
@@ -96,7 +131,6 @@
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 
 .button:disabled {
   background-color: #cccccc; /* light gray */
@@ -132,7 +166,7 @@ input[type="text"], input[type="number"], input[type="email"], select {
 
 <script>
 document.getElementById("previousPageButton").onclick = function() {
-            window.location.href = "homePage.html";
+            window.location.href = "homepage.html";
         };
 </script>
 
@@ -142,7 +176,10 @@ document.getElementById("previousPageButton").onclick = function() {
 </div>
 
 <div class="form-box">
-<big><label for="fitnessActivities">Choose your activities:</label></big>
+<!--<big><label for="fitnessActivities">Choose your activities:</label></big>-->
+<p style="display: inline;"><big>Choose your activities:</big></p> <!--Big inside p, delete label for attribute p to active-->
+
+<!--Not fix this one, because the item MUST have name to calculate!!-->
 <select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="[not selected yet]" disabled selected>choose activities</option> <!--must be 1st option-->
   <option value="squatting">Squatting</option>
@@ -156,14 +193,16 @@ document.getElementById("previousPageButton").onclick = function() {
 <h3 id="output" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightInput">Please enter your weight, in pound:</label><br></big>
+  <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
+  <p><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
   <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
   <button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
 </form>
 <h3 id="output3" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
 
 <form onsubmit="return false;">
-  <big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>
+  <!--<big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>-->
+ <p><big>How much weight do you lift, in pound:<br></big></p>
   <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
   <button onclick="displayLiftedWeight()">Submit</button>
 </form>
@@ -194,7 +233,8 @@ document.getElementById("previousPageButton").onclick = function() {
 </script>
 
 <form onsubmit="return false;">
-  <big><label for="liftRepsInput">How many reps:</label><br></big>
+  <!--<big><label for="liftRepsInput">How many reps:</label><br></big>-->
+  <p><big>How many reps:<br></big></p>
   <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
   <button onclick="displayLiftReps()">Submit</button>
 </form>
@@ -221,9 +261,10 @@ document.getElementById("previousPageButton").onclick = function() {
   <!--<button id="addActivities" onclick="unblockTypeIn()">Add more activities</button>-->
   <!--<button id="addActivities" onclick="displayPoint2()">Add more activities</button>-->
   <button class="button" id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
-  <button class="button">Add Achievement</button>
+  <button class="button" id="addAchievementButton" onclick="addAchievements()">Add Achievement</button>
   <br>
-  <red><label for="pointOutput">Your rewarded point:</label><br></red>  
+  <!--<red><label for="pointOutput">Your rewarded point:</label><br></red>-->
+  <p><red><big>Your rewarded point:</big><br></red></p>
 </form>
 
 <h3 id="output4" style="color: orange; margin-top: 20px; font-family:fantasy;"></h3>
@@ -254,7 +295,7 @@ table, th, td {
   </tbody>
 </table>
 
-<button id="sumPoint" class="sum-button" onclick="calculateSumPoint()">Total Point</button>
+<button id="sumPoint" class="btn" onclick="calculateSumPoint()">Total Point</button>
 <h3 id="outputSumPoint" style="color: red; margin-top: 20px; font-family:fantasy;"></h3>
 </div>
 
@@ -335,22 +376,9 @@ function calculate() {
   const weightLifted = parseFloat(document.getElementById("weightLiftInput").value);
   const reps = parseInt(document.getElementById("liftRepsInput").value);
 
-  //valid? //Need to update the calculate button to check requirements then remove submit buttons
-  if (!activities || isNaN(weight) || weight <= 0 || weight >= 1440 || 
-      isNaN(weightLifted) || weightLifted <=0 || weightLifted > 5340 ||
-      isNaN(reps) || reps <=0 || reps >100) {
+  //valid?
+  if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)) {
     alert("Please fill in all fields correctly.");
-   
-  document.getElementById("fitnessActivities").value ="";
-  document.getElementById("weightInput").value="";
-  document.getElementById("liftRepsInput").value="";
-  document.getElementById("weightLiftInput").value="";
-
-  const output4 = document.getElementById("output4");
-  output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
-  outputSumPoint.innerText = "";//Clear the "total point" 
-  
-   button.innerHTML = "Calculate"
     return;
   }
   
@@ -395,9 +423,8 @@ function calculateSumPoint() {
     }
   const outputSumPoint = document.getElementById("outputSumPoint");
   document.getElementById("outputSumPoint").innerText = "Your total point: " + sum;
- 
   }
-   localStorage.setItem("totalPointAddAchievement", sum);
+  
 }
 </script>
 <script>
@@ -406,5 +433,24 @@ window.onload = function() {
   activityDropdown.selectedIndex = 0; // first option
 };
 </script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const user = localStorage.getItem("currentUser");
+  const welcomeElement = document.getElementById("welcome");
+
+  if (welcomeElement) {
+    if (user) {
+      welcomeElement.textContent = `Welcome, ${user}!`;
+    } else {
+      welcomeElement.textContent = "Welcome, Guest!";
+    }
+  } else {
+    console.error("Couldn't find the #welcome element on the page.");
+  }
+});
+</script>
+
+  <script src="addachievement.js"></script>
+
 </body>
 </html>
