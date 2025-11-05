@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
   tableBody.innerHTML = "";
 
   if (Object.keys(data).length === 0) {
-    tableBody.innerHTML = `<tr><td colspan="6">No achievements yet. </td></tr>`;
+    tableBody.innerHTML = `<tr><td colspan="6">No achievements yet. Go earn some 💪</td></tr>`;
     return;
   }
 
@@ -68,7 +68,7 @@ document.getElementById("yourAchievementCard").onclick = function() {
   tableBody.innerHTML = "";
 
   if (!userAchievements || userAchievements.length === 0) {
-    tableBody.innerHTML = `<tr><td colspan="5">No achievements yet. </td></tr>`;
+    tableBody.innerHTML = `<tr><td colspan="5">No achievements yet. Go earn some </td></tr>`;
     totalDiv.textContent = "";
     return;
   }
@@ -87,48 +87,4 @@ document.getElementById("yourAchievementCard").onclick = function() {
 
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
   totalDiv.textContent = `Total Points: ${totalPoints}`;
-};
-
-document.getElementById("topAchievementCard").onclick = function () {
-  const data = JSON.parse(localStorage.getItem("userAchievements")) || {};
-  
-  const section = document.getElementById("topAchievementsSection");
-  const tableBody = document.querySelector("#topAchievementsTable tbody");
-
-  tableBody.innerHTML = ""; 
-  section.style.display = "block";
-
-  let leaderboard = [];
-
-  for (const [username, achievements] of Object.entries(data)) {
-    if (!achievements || achievements.length === 0) continue;
-
-    const best = achievements.reduce((max, current) => 
-      current.points > max.points ? current : max
-    );
-
-    leaderboard.push({
-      username,
-      ...best
-    });
-  }
-
-  leaderboard.sort((a, b) => b.points - a.points);
-
-  leaderboard.forEach(entry => {
-    const row = document.createElement("tr");
-    row.innerHTML = `
-      <td>${entry.username}</td>
-      <td>${entry.activity}</td>
-      <td>${entry.weight}</td>
-      <td>${entry.lifted}</td>
-      <td>${entry.reps}</td>
-      <td>${entry.points}</td>
-    `;
-    tableBody.appendChild(row);
-  });
-
-  if (leaderboard.length === 0) {
-    tableBody.innerHTML = `<tr><td colspan="6">No achievements found.</td></tr>`;
-  }
 };

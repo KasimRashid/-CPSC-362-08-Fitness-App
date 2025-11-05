@@ -1,12 +1,14 @@
 function addAchievements() {
+  // Retrieve logged-in username from localStorage
   const username = localStorage.getItem("currentUser");
 
   if (!username) {
     alert("No user is currently logged in. Please log in first.");
-    window.location.href = "login.html";
+    window.location.href = "login.html"; // redirect if needed
     return;
   }
 
+  // Get table
   const table = document.getElementById("pointTable");
   const rows = table.querySelectorAll("tbody tr");
   if (rows.length === 0) {
@@ -14,6 +16,7 @@ function addAchievements() {
     return;
   }
 
+  // Extract data
   const achievements = [];
   rows.forEach(row => {
     const cells = row.querySelectorAll("td");
@@ -26,13 +29,10 @@ function addAchievements() {
     });
   });
 
+  // Load and update data
   let storedData = JSON.parse(localStorage.getItem("userAchievements")) || {};
-
-  storedData[username] = (storedData[username] || []).concat(achievements);
-
+  storedData[username] = achievements;
   localStorage.setItem("userAchievements", JSON.stringify(storedData));
-
-  document.querySelector("#pointTable tbody").innerHTML = "";
 
   alert(`Achievements saved successfully for ${username}!`);
 }
