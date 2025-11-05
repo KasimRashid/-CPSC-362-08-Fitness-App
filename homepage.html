@@ -18,9 +18,9 @@
       <h1 class="logo">fitness App</h1>
       <h1 id="welcome"></h1>
       <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">top scores </a>
-        <a href="#">your Achievement</a>
+        <a href="#">Login Page</a> 
+        <a href="#">Top scores </a>
+        <a href="#">Your Achievement</a>
       </nav>
     </div>
   </header>
@@ -57,14 +57,11 @@
     <p id="personalTotalPoints" style="font-weight:bold;"></p>
   </section>
 
-  
   <main>
     <section class="hero">
       <div class="container hero-inner">
         <h2>Train Smarter. Move Happier.</h2>
-
-        <a class="btn" href="#">Add a new Achievement</a>
-        <button onclick="addAchievement()" type="Add a new Achievement"> Add a new Achievement </button>
+        <a class="btn" href="addachievement.html">Add a new Achievement</a>
       </div>
     </section>
 
@@ -82,13 +79,29 @@
           </div>
           <div class="feature-card">
 
-          <div class="feature-card">
+          <div class="feature-card" id="topAchievementCard">
             <h3>top Achievement</h3>
             <p>view the top Achievements.</p>
           </div>
         </div>
       </div>
     </section>
+    <section id="topAchievementsSection" style="display:none; margin-top:30px;">
+  <h2> Top Achievements Leaderboard</h2>
+  <table id="topAchievementsTable" border="1">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Activity</th>
+        <th>Weight</th>
+        <th>Lifted</th>
+        <th>Reps</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
 
     <section class="plans">
 
