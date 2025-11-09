@@ -14,7 +14,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
   if (username === "Admin" && password === "Admin1") {
     localStorage.setItem("currentUser", username);
-    window.location.href = "homePage.html"
+    window.location.href = "homepage.html"
     message.style.color = "green";
     message.textContent = " You are in !";
     window.location.href = "homepage.html";
@@ -22,7 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   if (accounts[username] && accounts[username].password === password) {
     localStorage.setItem("currentUser", username);
     message.style.color = "green";
-    message.textContentn = "You are in !"
+    message.textContent = "You are in !"
     window.location.href = "homepage.html"
   } else {
     message.style.color = "red";
@@ -30,3 +30,4 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
   }
 
 });
+
