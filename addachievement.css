@@ -186,9 +186,43 @@ body {
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
+  margin-top: auto;
 }
 
 /* Testing that correct CSS file to HTML
 body {
   background: yellow;
+  flex: 1 0 auto;
 } */
+
+/*Disable button visibility*/
+input {
+  background-color: #A8E6A3;
+  color: black;
+  font-weight: bold;
+}
+
+select {
+  background-color: #A8E6A3;
+  color: black;
+  font-weight: bold;
+}
+
+body > * {
+  flex: 1 0 auto; /* Let content fill available space */
+}
+
+html, body {
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+ margin: 0; 
+}
+
+input:disabled,
+select:disabled {
+  background-color: #FFF4A1; /* lighter-yellow background */
+       
+  border: 1px solid #ccc;   /* subtle border */
+}
