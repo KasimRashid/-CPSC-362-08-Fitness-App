@@ -5,6 +5,7 @@
   --muted: #9aa4b2;
   --accent: #ff6b6b;
   --accent-blue: #2196F3;
+  --page-button: #D4AC0D;
   --max-width: 1100px;
   --radius: 14px;
   --font: "Inter", system-ui, sans-serif;
@@ -108,6 +109,16 @@ body {
 .btn-blue { /*blue button*/
   background: var(--accent-blue);
   color: #081121; /*color of text*/
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.page-btn {
+  background: var(--page-button);
+  color: #081121;
   padding: 0.8rem 1.4rem;
   border-radius: var(--radius);
   font-weight: 700;
