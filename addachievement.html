@@ -157,8 +157,7 @@ input[type="text"], input[type="number"], input[type="email"], select {
   border-radius: 10px;       
   border: 1px solid blue; 
   padding: 6px;              
-  
-           
+      
 }
 </style>
 
@@ -178,13 +177,13 @@ document.getElementById("previousPageButton").onclick = function() {
 <p style="display: inline; font-family: 'Inter', system-ui, sans-serif;"><big>Choose your activities:</big></p> <!--Big inside p, delete label for attribute p to active-->
 
 <!--Not fix this one, because the item MUST have name to calculate!!-->
-<select id="fitnessActivities" name="fitnessActivities" style="background-color:#90CAF9; color: black; font-weight: bold;" onchange="showSelected()">
+<select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
   <option value="[not selected yet]" disabled selected>choose activities</option> <!--must be 1st option-->
-  <option value="squatting">Squatting</option>
-  <option value="benching">Benching</option>
-  <option value="curling">Curling</option>
-  <option value="leg pressing">Leg pressing</option>
-  <option value="deadlifting">Deadlifting</option>
+  <option value="Squatting">Squatting</option>
+  <option value="Benching">Benching</option>
+  <option value="Curling">Curling</option>
+  <option value="Leg pressing">Leg pressing</option>
+  <option value="Deadlifting">Deadlifting</option>
   
 </select>
 
@@ -193,7 +192,7 @@ document.getElementById("previousPageButton").onclick = function() {
 <form onsubmit="return false;">
   <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
   <p style="font-family: 'Inter', system-ui, sans-serif;"><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
-  <input type="text" id="weightInput" style="background-color:#90CAF9; color: black; font-weight: bold;" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
+  <input type="text" id="weightInput" name="weightTextField" placeholder="Type here..." maxlength="4" autocomplete="off">
   <button id="yourWeightSubmitButton" class="btn-submit" onclick="displayWeight()">Submit</button>
 </form>
 <h3 id="output3" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
@@ -201,7 +200,7 @@ document.getElementById("previousPageButton").onclick = function() {
 <form onsubmit="return false;">
   <!--<big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>-->
  <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How much weight do you lift, in pound:<br></big></p>
-  <input type="text" id="weightLiftInput" name="myText2" style="background-color:#90CAF9; color: black; font-weight: bold;" placeholder="Type here..." maxlength="3" autocomplete="off">
+  <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
   <button class="btn-submit" onclick="displayLiftedWeight()">Submit</button>
 </form>
 <h3 id="output5" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
@@ -233,7 +232,7 @@ document.getElementById("previousPageButton").onclick = function() {
 <form onsubmit="return false;">
   <!--<big><label for="liftRepsInput">How many reps:</label><br></big>-->
   <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How many reps:<br></big></p>
-  <input type="text" id="liftRepsInput" name="myText3" style="background-color:#90CAF9; color: black; font-weight: bold;" placeholder="Type here..." maxlength="2" autocomplete="off">
+  <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
   <button class="btn-submit" onclick="displayLiftReps()">Submit</button>
 </form>
 <h3 id="output7" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
@@ -320,7 +319,10 @@ td:last-child {
 function blockTypeIn () {
    // Unblock all text inputs
    const textFields2 = document.querySelectorAll('input');
-   textFields2.forEach(field => field.disabled = true);
+   textFields2.forEach(field => {
+   field.disabled = true;     
+   field.placeholder = "Disabled"; 
+});
 
    // Unblock all drop-downs
    const dropdowns2 = document.querySelectorAll('select');
@@ -344,7 +346,11 @@ function blockTypeIn () {
 function unblockTypeIn () {
   // Unblock all text inputs
    const textFields2 = document.querySelectorAll('input');
-   textFields2.forEach(field => field.disabled = false);
+   //textFields2.forEach(field => field.disabled = false);
+textFields2.forEach(field => {
+   field.disabled = false;     
+   field.placeholder = "Type here..."; 
+});
 
    // Unblock all drop-downs
    const dropdowns2 = document.querySelectorAll('select');
@@ -364,6 +370,9 @@ function unblockTypeIn () {
 
   const output4 = document.getElementById("output4");
   output4.innerText = ""; //Clear the "your point" due to the need to re-calculate
+  
+  document.getElementById("calculation").innerHTML = "Calculate";
+  const outputSumPoint = document.getElementById("outputSumPoint");
   outputSumPoint.innerText = "";//Clear the "total point" 
 }
 </script>
@@ -379,10 +388,12 @@ function handleClick() {
    button.disabled=true;
   } 
  else if (label === "Re-calculate") {
-    button.disabled = false;
-      recalculate(); 
-    blockTypeIn();  
-    button.disabled = true;   
+    //button.disabled = false;
+    recalculate(); 
+    //blockTypeIn();
+    button.innerHTML = "Calculate"; 
+    button.disabled = false;   
+    
     }
   }
 function calculate() {
@@ -404,6 +415,8 @@ function calculate() {
   const point = Math.round((weight * reps * weightLifted) / 7000);
   document.getElementById("output4").innerText = "Your point: " + point;
 
+  
+
   //Creat rows
   const tableBody = document.querySelector("#pointTable tbody");
   const newRow = document.createElement("tr");
@@ -422,9 +435,11 @@ function calculate() {
 }
 
   function recalculate() {
-    alert("Re-calculating...");
+   // alert("Re-calculating...");
      calculate();
-     unblockTypeIn();
+     blockTypeIn();
+  
+
   }
 
 function calculateSumPoint() {
@@ -470,4 +485,11 @@ window.addEventListener("DOMContentLoaded", () => {
   <script src="addachievement.js"></script>
 
 </body>
+
+<footer class="footer">
+    <div class="container">
+      <p>© 2025 Fitness App. All rights reserved.</p>
+    </div>
+  </footer>
+
 </html>
