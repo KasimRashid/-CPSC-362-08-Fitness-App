@@ -8,8 +8,7 @@
   <title>Fitness App: Add Achievement</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="addAchievement.css">
-
-</head>
+  </head>
 <body>
 <center>
   <h1 class="gradient">Achievement</h1>
@@ -17,7 +16,7 @@
 
 <Br>
 <button class="page-btn" id="previousPageButton">Back to Homepage</button> <!--href is for attribute (a tag)-->
-<button class="page-btn" id="nextPageButton">Next page</button> 
+<!--<button class="page-btn" id="nextPageButton">Next page</button>-->
 
 </center>
 
@@ -79,7 +78,7 @@
   align-items: center; /*center them horizontal*/
   position: absolute;
   top:50%;
-  left:70%;
+  left:75%;
   transform: translate(-50%,-50%);
 }
 
@@ -175,11 +174,11 @@ document.getElementById("previousPageButton").onclick = function() {
 </div>
 
 <div class="form-box">
-<!--<big><label for="fitnessActivities">Choose your activities:</label></big>-->
-<p style="display: inline;"><big>Choose your activities:</big></p> <!--Big inside p, delete label for attribute p to active-->
+<!--<big><label for="fitnessActivities" font-family:'Inter', system-ui, sans-serif;">Choose your activities:</label></big>-->
+<p style="display: inline; font-family: 'Inter', system-ui, sans-serif;"><big>Choose your activities:</big></p> <!--Big inside p, delete label for attribute p to active-->
 
 <!--Not fix this one, because the item MUST have name to calculate!!-->
-<select id="fitnessActivities" name="fitnessActivities" onchange="showSelected()">
+<select id="fitnessActivities" name="fitnessActivities" style="background-color:#90CAF9; color: black; font-weight: bold;" onchange="showSelected()">
   <option value="[not selected yet]" disabled selected>choose activities</option> <!--must be 1st option-->
   <option value="squatting">Squatting</option>
   <option value="benching">Benching</option>
@@ -189,23 +188,23 @@ document.getElementById("previousPageButton").onclick = function() {
   
 </select>
 
-<h3 id="output" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
+<h3 id="output" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
 <form onsubmit="return false;">
   <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
-  <p><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
-  <input type="text" id="weightInput" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
-  <button id="yourWeightSubmitButton" onclick="displayWeight()">Submit</button>
+  <p style="font-family: 'Inter', system-ui, sans-serif;"><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
+  <input type="text" id="weightInput" style="background-color:#90CAF9; color: black; font-weight: bold;" name="myText" placeholder="Type here..." maxlength="4" autocomplete="off">
+  <button id="yourWeightSubmitButton" class="btn-submit" onclick="displayWeight()">Submit</button>
 </form>
-<h3 id="output3" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
+<h3 id="output3" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
 <form onsubmit="return false;">
   <!--<big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>-->
- <p><big>How much weight do you lift, in pound:<br></big></p>
-  <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
-  <button onclick="displayLiftedWeight()">Submit</button>
+ <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How much weight do you lift, in pound:<br></big></p>
+  <input type="text" id="weightLiftInput" name="myText2" style="background-color:#90CAF9; color: black; font-weight: bold;" placeholder="Type here..." maxlength="3" autocomplete="off">
+  <button class="btn-submit" onclick="displayLiftedWeight()">Submit</button>
 </form>
-<h3 id="output5" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
+<h3 id="output5" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
   <script>
     function displayWeight() {
@@ -233,11 +232,11 @@ document.getElementById("previousPageButton").onclick = function() {
 
 <form onsubmit="return false;">
   <!--<big><label for="liftRepsInput">How many reps:</label><br></big>-->
-  <p><big>How many reps:<br></big></p>
-  <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
-  <button onclick="displayLiftReps()">Submit</button>
+  <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How many reps:<br></big></p>
+  <input type="text" id="liftRepsInput" name="myText3" style="background-color:#90CAF9; color: black; font-weight: bold;" placeholder="Type here..." maxlength="2" autocomplete="off">
+  <button class="btn-submit" onclick="displayLiftReps()">Submit</button>
 </form>
-<h3 id="output7" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
+<h3 id="output7" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
   <script>
     function displayLiftReps() {
@@ -252,33 +251,51 @@ document.getElementById("previousPageButton").onclick = function() {
     }
   </script>
 
-<h3 id="output2" style="color: green; margin-top: 16px; font-family:fantasy;"></h3>
+<h3 id="output2" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
 <form onsubmit="return false;">
   <!--<button id="calculation" onclick="displayPoint()">Calculate my point</button>-->
-  <button class="button" id="calculation" onclick="handleClick()">Calculate</button>
+  <button class="btn-blue" id="calculation" onclick="handleClick()">Calculate</button>
   <!--<button id="addActivities" onclick="unblockTypeIn()">Add more activities</button>-->
   <!--<button id="addActivities" onclick="displayPoint2()">Add more activities</button>-->
-  <button class="button" id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
-  <button class="button" id="addAchievementButton" onclick="addAchievements()">Add Achievement</button>
+  <button class="btn-blue" id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
+  <button class="btn" id="addAchievementButton" onclick="addAchievements()">Add Achievement</button>
   <br>
   <!--<red><label for="pointOutput">Your rewarded point:</label><br></red>-->
-  <p><red><big>Your rewarded point:</big><br></red></p>
+  <p style="font-family: 'Inter', system-ui, sans-serif;"><red><big>Your rewarded point:</big><br></red></p>
 </form>
 
-<h3 id="output4" style="color: orange; margin-top: 20px; font-family:fantasy;"></h3>
+<h3 id="output4" style="color: orange; margin-top: 20px; font-family:'Inter', system-ui, sans-serif;"></h3>
 </div>
 
 <!--<a href="homePage.html">Homepage (direct HTML link)</a>-->
 
 <style>
+table {
+  width: 40%;
+}
+
 table, th, td {
-  border:1px solid black;
+  border: 1px solid #ff6b6b;
+ border-collapse: collapse;  /*decided to delete double-border lines*/
+}
+
+th, td {
+  text-align: center; /*center horizontal*/
+  vertical-align: middle;
+  padding: 8px;       
+}
+
+th:last-child,
+td:last-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  color: #ff6b6b /*mark the point all red-looking with the color from the button*/
 }
 </style>
 
 <div class="table-box">
-<h2>Awarded activities</h2>
+<h2 style="color: green; text-align: center;">Awarded activities</h2>
 <table id="pointTable" style="width:40%">
   <thead>
     <tr>
@@ -294,8 +311,9 @@ table, th, td {
   </tbody>
 </table>
 
+<br>
 <button id="sumPoint" class="btn" onclick="calculateSumPoint()">Total Point</button>
-<h3 id="outputSumPoint" style="color: red; margin-top: 20px; font-family:fantasy;"></h3>
+<h3 id="outputSumPoint" style="color: red; margin-top: 20px; font-family:'Inter', system-ui, sans-serif;"></h3>
 </div>
 
 <script>
