@@ -226,3 +226,23 @@ select:disabled {
        
   border: 1px solid #ccc;   /* subtle border */
 }
+
+button:disabled, .btn-submit:disabled, .btn-blue:disabled, .btn:disabled {
+  background-color: #cccccc; /* grey background */
+  color: #090D10; /* Dark grey text */
+  cursor: not-allowed; /* Change the cursor to indicate the button is disabled */
+  box-shadow: none; /* Remove shadow when disabled */
+  transform: none; 
+}
+
+button:not(:disabled):hover, 
+.btn-submit:not(:disabled):hover, 
+.btn-blue:not(:disabled):hover, 
+.btn:hover, 
+.button-red:hover {
+  /* Flash effect for buttons */
+  background-color:  #FFA500; /*let choose orange :D*/
+  transform: scale(1.03); /* scaling effects */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  color: #fff; /* change text color */
+}
