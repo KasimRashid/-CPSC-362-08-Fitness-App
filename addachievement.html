@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="addAchievement.css">
   </head>
 <body>
+
+
 <center>
   <h1 class="gradient">Achievement</h1>
   <h2 id="welcome" style="text-align:center; font-family:'Times New Roman', serif; color:#1F618D;"></h2>
@@ -206,6 +208,7 @@ document.getElementById("previousPageButton").onclick = function() {
 <h3 id="output5" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
   <script>
+
     function displayWeight() {
       const weight = document.getElementById("weightInput").value;
       const output3 = document.getElementById("output3");
@@ -258,6 +261,10 @@ document.getElementById("previousPageButton").onclick = function() {
   <!--<button id="addActivities" onclick="unblockTypeIn()">Add more activities</button>-->
   <!--<button id="addActivities" onclick="displayPoint2()">Add more activities</button>-->
   <button class="btn-blue" id="addActivities" onclick="unblockTypeIn()">Add more activities</button>
+  <script>
+    // disable button when page loads
+    document.getElementById("addActivities").disabled = true;
+  </script>
   <button class="btn" id="addAchievementButton" onclick="addAchievements()">Add Achievement</button>
   <br>
   <!--<red><label for="pointOutput">Your rewarded point:</label><br></red>-->
@@ -381,11 +388,11 @@ textFields2.forEach(field => {
 function handleClick() {
   const button = document.getElementById("calculation");
   const label = button.innerHTML;
-
+  
   if (label === "Calculate") {
     calculate(); // Run calculation first
-    button.innerHTML = "Re-calculate";
-   button.disabled=true;
+     
+   
   } 
  else if (label === "Re-calculate") {
     //button.disabled = false;
@@ -407,7 +414,20 @@ function calculate() {
   //valid?
   if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)) {
     alert("Please fill in all fields correctly.");
+    document.getElementById("addActivities").disabled = true;
+    if(isNaN(weight)){
+         document.getElementById("weightInput").disabled = false; //only in this case, 
+        //have to unblock weight input, because it may incorrect at 1st time
+        document.getElementById("yourWeightSubmitButton").disabled =false;
+    }
+   else{
+     document.getElementById("weightInput").disabled = true;
+    
+     button.innerHTML = "Re-calculate";
+   }
     return;
+  } else{
+  document.getElementById("addActivities").disabled = false;
   }
   
   blockTypeIn();
