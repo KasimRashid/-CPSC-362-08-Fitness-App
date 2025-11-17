@@ -132,3 +132,12 @@ document.getElementById("topAchievementCard").onclick = function () {
     tableBody.innerHTML = `<tr><td colspan="6">No achievements found.</td></tr>`;
   }
 };
+
+document.querySelectorAll('.feature-card').forEach(cardButton => {
+  cardButton.addEventListener( 'click', () => {
+    window.scrollTo({
+       top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
