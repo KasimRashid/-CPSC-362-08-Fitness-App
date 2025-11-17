@@ -29,32 +29,17 @@
 </header>
  
   <div class="table-box">
-  <h2 style="color: green; text-align: center;">All users Achievements</h2>
-  <table id="userAchievementsTable" border="1">
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Activity</th>
-        <th>Weight</th>
-        <th>Lifted</th>
-        <th>Reps</th>
-        <th>Points</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-  <p id="totalPoints" style="font-weight: bold;"></p>
+ 
     <section id="userAchievementsSection" style="display:none; margin-top:30px;">
-    <h2>Your Achievements</h2>
+    <h2 style="color: green; text-align: center;">Your Achievements</h2>
     <table id="personalAchievementsTable" border="1">
       <thead>
         <tr>
-          <th>Activity</th>
-          <th>Weight</th>
-          <th>Lifted</th>
-          <th>Reps</th>
-          <th>Points</th>
+          <th style="font-style: italic;">Activity</th>
+          <th style="font-style: italic;">Weight</th>
+          <th style="font-style: italic;">Lifted</th>
+          <th style="font-style: italic;">Reps</th>
+          <th style="font-style: italic;">Points</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -62,22 +47,40 @@
     <p id="personalTotalPoints" style="font-weight:bold;"></p>
   </section>
  <section id="topAchievementsSection" style="display:none; margin-top:30px;">
-  <h2> Top Achievements Leaderboard</h2>
+  <h2 style="color: green; text-align: center;">Top Achievements Leaderboard</h2>
   <table id="topAchievementsTable" border="1">
     <thead>
       <tr>
-        <th>Username</th>
-        <th>Activity</th>
-        <th>Weight</th>
-        <th>Lifted</th>
-        <th>Reps</th>
-        <th>Points</th>
+        <th style="font-style: italic;">Username</th>
+        <th style="font-style: italic;">Activity</th>
+        <th style="font-style: italic;">Weight</th>
+        <th style="font-style: italic;">Lifted</th>
+        <th style="font-style: italic;">Reps</th>
+        <th style="font-style: italic;">Points</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
 </section>
-  <!-- put (all stuff )here -->
+
+<section id="allUsersAchievements" style=margin-top:30px;">
+ <h2 style="color: green; text-align: center;">All users Achievements</h2>
+  <table id="userAchievementsTable" border="1">
+    <thead>
+      <tr>
+        <th style="font-style: italic;">Username</th>
+        <th style="font-style: italic;">Activity</th>
+        <th style="font-style: italic;">Weight</th>
+        <th style="font-style: italic;">Lifted</th>
+        <th style="font-style: italic;">Reps</th>
+        <th style="font-style: italic;">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <p id="totalPoints" style="font-weight: bold;"></p>
+</section>
 </div>
   
   <main>
@@ -92,19 +95,23 @@
       <div class="container">
         <h2>App Features</h2>
         <div class="feature-grid">
+           
           <div class="feature-card" id="loginCard">
-            <h3>login</h3>
-            <p>back to login</p>
+            <h3>Login page</h3>
+            <p>Go back to login</p>
           </div>
-          <div class="feature-card" id="yourAchievementCard">
-            <h3>your Achievement</h3>
-            <p>see your Achievement</p>
-          </div>
-          <div class="feature-card">
+        
+          
 
+          <div class="feature-card" id="yourAchievementCard">
+            <h3>Your Achievement</h3>
+            <p>See your Achievement</p>
+          </div>
+          
+       
           <div class="feature-card" id="topAchievementCard">
-            <h3>top Achievement</h3>
-            <p>view the top Achievements.</p>
+            <h3>Top Achievements</h3>
+            <p>View the top Achievements.</p>
           </div>
         </div>
       </div>
@@ -126,7 +133,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2025 fitness app. All rights reserved.</p>
+      <p>© 2025 Fitness App. All rights reserved.</p>
     </div>
   </footer>
 
@@ -134,4 +141,3 @@
   <script src="homepage.js"></script>
 </body>
 </html>
-
