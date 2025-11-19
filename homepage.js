@@ -1,3 +1,8 @@
+
+if (!localStorage.getItem("currentUser")) {
+  window.location.href = "login.html";
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const currentUser = localStorage.getItem("currentUser");
   const welcomeElement = document.getElementById("welcome");
@@ -7,10 +12,23 @@ window.addEventListener("DOMContentLoaded", () => {
   } else {
     welcomeElement.textContent = "No user logged in";
   }
-
+  
   document.getElementById("loginCard").onclick = function () {
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
     window.location.href = "login.html";
-  };
+  } else {
+    alert("You are already logged in!");
+  }
+};
+
+window.history.replaceState(null, null, window.location.href);
+window.onpageshow = function(event) {
+  if (event.persisted) {
+    window.location.reload();
+  }
+};
+
 
   const data = JSON.parse(localStorage.getItem("userAchievements")) || {};
   const tableBody = document.querySelector("#userAchievementsTable tbody");
@@ -55,7 +73,9 @@ document.getElementById("yourAchievementCard").onclick = function() {
     alert("Please log in first.");
     window.location.href = "login.html";
     return;
-  }
+  }document.getElementById("navTopScores").onclick = function () {
+  document.getElementById("topAchievementCard").click();
+};
 
   const section = document.getElementById("userAchievementsSection");
   const tableBody = document.querySelector("#personalAchievementsTable tbody");
@@ -88,6 +108,9 @@ document.getElementById("yourAchievementCard").onclick = function() {
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
   totalDiv.textContent = `Total Points: ${totalPoints}`;
 };
+document.getElementById("navYourAchievements").onclick = function () {
+  document.getElementById("yourAchievementCard").click();
+  };
 
 document.getElementById("topAchievementCard").onclick = function () {
   const data = JSON.parse(localStorage.getItem("userAchievements")) || {};
@@ -132,6 +155,12 @@ document.getElementById("topAchievementCard").onclick = function () {
     tableBody.innerHTML = `<tr><td colspan="6">No achievements found.</td></tr>`;
   }
 };
+document.getElementById("navTopScores").onclick = function () {
+  document.getElementById("topAchievementCard").click();
+};
+
+  const data = JSON.parse(localStorage.getItem("userAchievements")) || {};
+
 
 document.querySelectorAll('.feature-card').forEach(cardButton => {
   cardButton.addEventListener( 'click', () => {
@@ -141,3 +170,8 @@ document.querySelectorAll('.feature-card').forEach(cardButton => {
     });
   });
 });
+
+function logout(){
+  localStorage.removeItem("currentUser");
+  window.location.href = "login.html";
+}
