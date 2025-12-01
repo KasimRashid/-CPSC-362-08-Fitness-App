@@ -1,8 +1,6 @@
-
 <!doctype html>
 <html lang="en">
 <head>
-  <script src="homepage.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title> Fitness app </title>
@@ -14,17 +12,22 @@
 <body>
   
   <header class="header">
-    <div class="container">
-      <h1 class="logo">fitness App</h1>
-      <h1 id="welcome"></h1>
-      <nav class="nav">
-        <a href="#">Login Page</a> 
-        <a href="#">Top scores </a>
-        <a href="#">Your Achievement</a>
-      </nav>
+  <div class="container">
+    <div class="logo-container">
+      <img src="man.png" alt="Company Logo" width="50" height="50">
+      <h1 class="logo">Fitness App</h1>
     </div>
-  </header>
-  <h2>All users Achievements</h2>
+    <h1 id="welcome"></h1>
+    <nav class="nav">
+      <a href="#"id ="navYourAchievements"> Your Achievement</a>
+      <a href="#"id="navTopScores">Top Scores</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </div>
+</header>
+ 
+  <div class="table-box">
+  <h2 style="color: green; text-align: center;">All users Achievements</h2>
   <table id="userAchievementsTable" border="1">
     <thead>
       <tr>
@@ -50,43 +53,14 @@
           <th>Lifted</th>
           <th>Reps</th>
           <th>Points</th>
+          <th>Edit</th> 
         </tr>
       </thead>
       <tbody></tbody>
     </table>
     <p id="personalTotalPoints" style="font-weight:bold;"></p>
   </section>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <h2>Train Smarter. Move Happier.</h2>
-        <a class="btn" href="addachievement.html">Add a new Achievement</a>
-      </div>
-    </section>
-
-    <section class="features">
-      <div class="container">
-        <h2>App Features</h2>
-        <div class="feature-grid">
-          <div class="feature-card" id="loginCard">
-            <h3>login</h3>
-            <p>back to login</p>
-          </div>
-          <div class="feature-card" id="yourAchievementCard">
-            <h3>your Achievement</h3>
-            <p>see your Achievement</p>
-          </div>
-          <div class="feature-card">
-
-          <div class="feature-card" id="topAchievementCard">
-            <h3>top Achievement</h3>
-            <p>view the top Achievements.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="topAchievementsSection" style="display:none; margin-top:30px;">
+ <section id="topAchievementsSection" style="display:none; margin-top:30px;">
   <h2> Top Achievements Leaderboard</h2>
   <table id="topAchievementsTable" border="1">
     <thead>
@@ -102,27 +76,58 @@
     <tbody></tbody>
   </table>
 </section>
+  <!-- put (all stuff )here -->
+</div>
+  
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <h2>Train Smarter. Move Happier.</h2>
+        <a class="btn" href="addachievement.html">Add a new Achievement</a>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <h2>App Features</h2>
+        <div class="feature-grid">
+          <div class="feature-card" id="loginCard">
+            <h3>logout</h3>
+            <p>back to login</p>
+          </div>
+          <div class="feature-card" id="yourAchievementCard" >
+            <h3>your Achievement</h3>
+            <p>see your Achievement</p>
+          </div>
+          <div class="feature-card">
+
+          <div class="feature-card" id="topAchievementCard">
+            <h3>top Achievement</h3>
+            <p>view the top Achievements.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
 
     <section class="plans">
 
     </section>
 
-    <section class="cta">
+    <!--<section class="cta">
       <div class="container">
-        <h2>Ready to start your journey?</h2>
+       <h2>Ready to start your journey?</h2>
         <a class="btn" href="#">Download the App</a>
-      </div>
-    </section>
+      </div> 
+    </section>-->
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© 2025 fitness app. All rights reserved.</p>
+      <p>Â© 2025 fitness app. All rights reserved.</p>
     </div>
   </footer>
-
-
   <script src="homepage.js"></script>
 </body>
 </html>
-
