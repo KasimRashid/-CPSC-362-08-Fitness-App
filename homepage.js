@@ -13,6 +13,14 @@ window.addEventListener("DOMContentLoaded", () => {
     welcomeElement.textContent = "No user logged in";
   }
   
+  document.getElementById("loginCard").onclick = function () {
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    window.location.href = "login.html";
+  } else {
+    alert("You are already logged in!");
+  }
+};
 
 window.history.replaceState(null, null, window.location.href);
 window.onpageshow = function(event) {
@@ -107,6 +115,9 @@ document.getElementById("yourAchievementCard").onclick = function() {
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
   totalDiv.textContent = `Total Points: ${totalPoints}`;
 };
+document.getElementById("navYourAchievements").onclick = function () {
+  document.getElementById("yourAchievementCard").click();
+  };
 
 document.getElementById("navYourAchievements").onclick = function () {
   document.getElementById("yourAchievementCard").click();

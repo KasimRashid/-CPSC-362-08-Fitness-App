@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="login.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creating a New Account</title>
+  <title> Creating a new account </title>
+<!--  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="createaccount.css">
+  
 </head>
+
+
+<style>
+
+input[type="text"], input[type="number"], input[type="password"], select {
+  outline: none;  
+  border-radius: 10px;       
+  border: 1px solid blue; 
+  padding: 6px;                       
+}
+
+</style>
+
 <body>
-  <div class="login-container">
+<header class="header">
+  <div class="logo-container">
+    <img src="pngtree-cartoon-male-bearded-man-lifting-weights-cartoon-illustration-zeptografene-vector-png-image_6817255.png" alt="Company Logo" width="50" height="50">
+    <h1>Fitness App</h1>
+</div>
+</header>
+
+  <section class="hero">
+      <div class="container hero-inner">
     <h2>Creating a New Account</h2>
     <form id="registerForm">
       <div class="input-group">
-        <label for="username">Username</label>
+        <label for="username" style="font-weight: bold;">Username</label>
         <input type="text" id="username" required>
       </div>
+      <br>
       <div class="input-group">
-        <label for="password">Password</label>
+        <label for="password" style="font-weight: bold;">Password</label>
         <input type="password" id="password" required>
       </div>
 
       <p id="message"></p>
-      <button type="submit">Create Account</button>
+      <button type="submit" class="btn-blue">Create Account</button>
     </form>
 
-    <button type="button" onclick="BackButton()">Back</button>
+    <button type="btn" class="btn" onclick="BackButton()">Return to Login Page</button>
   </div>
 
   <script src="createaccount.js"></script>
 </body>
 </html>
+

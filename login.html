@@ -3,110 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+  <title> Fitness app: Login </title>
+<!--  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet"> -->
+  <link rel="stylesheet" href="Login.css">
+  
+</head>
 
 <style>
-.body{
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(40, 0, 159);
-
-  background-image: url("pic.jpg");
-
- 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-}
-
-.title {
- background-color: #D03D2F;  /*blue */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-size: 50px;
-  text-fill-color: transparent;
-  display: inline-block;
-  font-family: "Sans serif", serif;
-}
-
-.page-button {
-  background-color: #D4AC0D; /* yellow */
-  color: white;
-  border: none;
-  padding: 5px 8px; /* smaller button */
-  font-size: 16px;
-  font-family: "Times New Roman", serif;
-  font-weight: bold; /* makes the text bold */
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.button {
-  background-color: #1F618D; /* blue */
-  color: white;
-  border: none;
-  padding: 5px 8px; /* smaller button than total, same size as page-button */
-  font-size: 16px;
-  font-family: "Times New Roman", serif;
-  font-weight: bold; /* makes the text bold */
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.button-red {
-  background-color: #D03D2F; /* same as button, just red :D */
-  color: white;
-  border: none;
-  padding: 5px 8px; /* smaller button than total, same size as page-button */
-  font-size: 16px;
-  font-family: "Times New Roman", serif;
-  font-weight: bold; /* makes the text bold */
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.button:disabled {
-  background-color: #cccccc; /* light gray */
-  color: #090D10; /* black */
-  cursor: not-allowed;
-  box-shadow: none;
-  transform: none;
-}
-
-.sum-button {
-  background-color: #D03D2F; /* red*/
-  color: white;
-  border: none;
-  padding: 6px 12px; /* bigger button */
-  font-size: 16px;
-  font-family: "Times New Roman", serif;
-  font-weight: bold; 
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.table-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-table, th, td {
-  border:2px solid orange;
-}
 
 input[type="text"], input[type="number"], input[type="password"], select {
   outline: none;  
@@ -115,50 +18,50 @@ input[type="text"], input[type="number"], input[type="password"], select {
   padding: 6px;                       
 }
 
-.center-making {
-  font-family: "Times New Roman", serif;
-  font-size:18px;
-  position: absolute;
-  top:30%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  color:#333;
-}
-
-.text{
-color = #1F618D;
-font-size: 22px;
-font-family: "Verdana", Tahoma;
-}
 </style>
 
-<body class="body">
+<body>
+<header class="header">
+  <div class="logo-container">
+    <img src="pngtree-cartoon-male-bearded-man-lifting-weights-cartoon-illustration-zeptografene-vector-png-image_6817255.png" alt="Company Logo" width="50" height="50">
+    <h1>Fitness App</h1>
+</div>
+</header>
 
-<!--<body style="background-color: #BBDEFB;">-->
 
-<center>
-  <div class="center-making">
-    <h2 class="title">LOGIN</h2>
+  <section class="hero">
+      <div class="container hero-inner">
+    <h2>Login</h2>
     <form id="loginForm">
       <div class="input-group">
-        <label class="text"for="username">Username</label>
+        <label for="username" style="font-weight: bold;">Username</label>
+        <!--<h2>Username</h2/>-->
         <input type="text" id="username" required>
       </div>
       <br>
       <div class="input-group">
-        <label class="text" for="password">Password</label>
+        <label for="password" style="font-weight: bold;">Password</label>
         <input type="password" id="password" required>
       </div>
       <div class="button-row">
       <br>
-      <button class="button" type="submit">Login</button>
-      <button class="button-red" type="button" onclick="GoToCreateAccount()">Create an account</button>
+      <!--<button type="submit">Login</button>-->
+      <!--<button type="btn" onclick="GoToCreateAccount()">Create an account</button>-->
+      <!--<a class="btn-blue" type="submit">Login</a>-->
+      <button class="btn-blue" type="submit">Login</button>      
+      <button type="button" class="btn" onclick="GoToCreateAccount()">Create an account</button>
       </div>
       <p id="message"></p>
     </form>
   <script src="login.js"></script>
-  <link rel="stylesheet" href="Login.css"> 
-</center> 
+</div>
+</section>
 </body>
+
+<footer class="footer">
+    <div class="container">
+      <p>© 2025 Fitness App. All rights reserved.</p>
+    </div>
+  </footer>
 
 </html>

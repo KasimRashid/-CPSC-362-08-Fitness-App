@@ -3,6 +3,8 @@
   --text: #e6eef6;
   --muted: #9aa4b2;
   --accent: #ff6b6b;
+  --page-button: #D4AC0D;
+
   --max-width: 1100px;
   --radius: 14px;
   --font: "Inter", system-ui, sans-serif;
@@ -34,9 +36,23 @@ body {
   padding: 1rem 0;
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0; 
+
+}
+
+.logo-container img {
+  margin-right: 0; /* No space between image and text */
+}
+
 .logo {
   font-weight: 800;
   font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
 }
 .header .container {
   display: flex;
@@ -94,13 +110,35 @@ body {
   grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
   gap: 1rem;
 }
-.feature-card {
+/*.feature-card {
   background: rgba(255,255,255,0.03);
   padding: 1rem;
   border-radius: var(--radius);
-}
+}*/
 .feature-card h3 {
   margin-bottom: 0.5rem;
+}
+.feature-card {
+  /*background: rgba(255,255,255,0.03);*/
+  background: var(--page-button);
+  padding: 0.5rem;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  border-radius: var(--radius);
+}
+
+.feature-card:hover {
+  /*background: rgba(255,255,255, 0.08);*/
+ transform: translateY(-6px) ;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background-color:  #FFA500; /*let choose orange :D*/
+  /*transform: scale(1.03);  scaling effects */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  color: #fff; /* change text color */
+}
+
+.feature-card:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
 }
 
 /* PLANS */
@@ -153,3 +191,56 @@ body {
   color: var(--muted);
   font-size: 0.9rem;
 }
+
+/*CENTRALIZE THE CHART + TABLE SETTINGS*/
+.table-box {
+  flex-direction: column; /*stacked them vertical*/
+  align-items: center; /*center them horizontal*/
+  display: flex;
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+}
+
+table {
+  width: 40%;
+}
+
+table, th, td {
+  border: 1px solid #ff6b6b;
+ border-collapse: collapse;  /*decided to delete double-border lines*/
+}
+
+th, td {
+  text-align: center; /*center horizontal*/
+  vertical-align: middle;
+  padding: 8px;       
+}
+
+th:last-child,
+td:last-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  color: #ff6b6b /*mark the point all red-looking with the color from the button*/
+}
+
+button:disabled, .btn-submit:disabled, .btn-blue:disabled, .btn:disabled {
+  background-color: #cccccc; /* grey background */
+  color: #090D10; /* Dark grey text */
+  cursor: not-allowed; /* Change the cursor to indicate the button is disabled */
+  box-shadow: none; /* Remove shadow when disabled */
+  transform: none; 
+}
+
+button:not(:disabled):hover, .btn-submit:not(:disabled):hover, .btn-blue:not(:disabled):hover, 
+.btn:not(:disabled):hover, .button-red:not(:disabled):hover {
+  /* Flash effect for buttons */
+  background-color:  #FFA500; /*let choose orange :D*/
+  transform: scale(1.03); /* scaling effects */
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  color: #fff; /* change text color */
+}
+
+.btn:active, .btn-submit:active, .btn-blue:active, .button-red:active, .page-btn:active  {
+    box-shadow: inset 4px 4px 8px #ccc, inset -4px -4px 8px #fff;
+    transform: translateY(2px);
+  }
