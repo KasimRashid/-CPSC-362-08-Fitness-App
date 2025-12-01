@@ -93,7 +93,7 @@ document.getElementById("yourAchievementCard").onclick = function() {
     return;
   }
 
-  userAchievements.forEach(item => {
+  userAchievements.forEach((item, index) => {
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${item.activity}</td>
@@ -101,13 +101,24 @@ document.getElementById("yourAchievementCard").onclick = function() {
       <td>${item.lifted}</td>
       <td>${item.reps}</td>
       <td>${item.points}</td>
+      <td><button class="edit-btn" data-index="${index}">Edit</button></td>
     `;
     tableBody.appendChild(row);
   });
+  document.querySelectorAll(".edit-btn").forEach(button => {
+  button.addEventListener("click", (e) => {
+    const index = e.target.dataset.index;
+    editAchievement(index);
+  });
+});
 
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
   totalDiv.textContent = `Total Points: ${totalPoints}`;
 };
+document.getElementById("navYourAchievements").onclick = function () {
+  document.getElementById("yourAchievementCard").click();
+  };
+
 document.getElementById("navYourAchievements").onclick = function () {
   document.getElementById("yourAchievementCard").click();
   };
@@ -174,4 +185,34 @@ document.querySelectorAll('.feature-card').forEach(cardButton => {
 function logout(){
   localStorage.removeItem("currentUser");
   window.location.href = "login.html";
+}
+
+function computePoints(weight, reps, lifted) {
+    return Math.round((weight * reps * lifted) / 7000);
+}
+
+function editAchievement(index) {
+  const currentUser = localStorage.getItem("currentUser");
+  const data = JSON.parse(localStorage.getItem("userAchievements")) || {};
+  const list = data[currentUser];
+
+  const item = list[index];
+
+  const newActivity = prompt("Activity:", item.activity);
+  const newWeight = prompt("Weight:", item.weight);
+  const newLifted = prompt("Lifted:", item.lifted);
+  const newReps = prompt("Reps:", item.reps);
+
+  if (newActivity === null) return;
+
+  item.activity = newActivity;
+  item.weight = Number(newWeight);
+  item.lifted = Number(newLifted);
+  item.reps = Number(newReps);
+
+  item.points = computePoints(item.weight, item.reps, item.lifted);
+
+  localStorage.setItem("userAchievements", JSON.stringify(data));
+
+  document.getElementById("yourAchievementCard").click();
 }
