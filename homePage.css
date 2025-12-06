@@ -120,10 +120,11 @@ body {
 }
 .feature-card {
   /*background: rgba(255,255,255,0.03);*/
-  background: var(--page-button);
+  background: var(--accent);
   padding: 0.5rem;
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   border-radius: var(--radius);
+  color: #0f1724;
 }
 
 .feature-card:hover {
@@ -192,36 +193,6 @@ body {
   font-size: 0.9rem;
 }
 
-/*CENTRALIZE THE CHART + TABLE SETTINGS*/
-.table-box {
-  flex-direction: column; /*stacked them vertical*/
-  align-items: center; /*center them horizontal*/
-  display: flex;
-  margin-top: 30px; 
-  margin-bottom: 30px; 
-}
-
-table {
-  width: 40%;
-}
-
-table, th, td {
-  border: 1px solid #ff6b6b;
- border-collapse: collapse;  /*decided to delete double-border lines*/
-}
-
-th, td {
-  text-align: center; /*center horizontal*/
-  vertical-align: middle;
-  padding: 8px;       
-}
-
-th:last-child,
-td:last-child {
-  font-weight: bold; /*bold the point column*/
-  font-size: 1.2em; /*a little bigger*/
-  color: #ff6b6b /*mark the point all red-looking with the color from the button*/
-}
 
 button:disabled, .btn-submit:disabled, .btn-blue:disabled, .btn:disabled {
   background-color: #cccccc; /* grey background */
@@ -244,3 +215,68 @@ button:not(:disabled):hover, .btn-submit:not(:disabled):hover, .btn-blue:not(:di
     box-shadow: inset 4px 4px 8px #ccc, inset -4px -4px 8px #fff;
     transform: translateY(2px);
   }
+
+/*WELCOME LINE*/
+.welcome {
+  color: #2196F3; 
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/*CENTRALIZE THE CHART + TABLE SETTINGS*/
+.table-box {
+  flex-direction: column; /*stacked them vertical*/
+  align-items: center; /*center them horizontal*/
+  display: flex;
+  margin-top: 30px; 
+  margin-bottom: 30px; 
+}
+
+table {
+    border-collapse: collapse; 
+    background-color: #f9f9f9; 
+    border-radius: 15px; /* Adjust the radius for the roundness */
+    overflow: hidden; 
+}
+
+/* headers */
+table th {
+    background-color: #ff6b6b; 
+    color: white;
+    padding: 10px 15px; 
+    text-align: center; 
+    font-size: 22px; 
+}
+
+/* cells  */
+table td {
+    padding: 12px 15px; 
+    color: black;
+    text-align: center; 
+    border: 2px solid #ddd; /* gray bourder */
+    font-size: 20px; /* text */
+}
+
+td:last-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  color: #ff6b6b; /*mark the point all red-looking with the color from the button*/
+}
+
+td:first-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  font-style: italic;
+}
+
+/* Hover */ 
+table tr:hover { 
+background-color: #ff9b9b;  /* Light pink when hovering */ 
+} 
+
+/*For the second table cases that need the 5th column highlighted*/
+#personalAchievementsTable td:nth-child(5) {
+  font-weight: bold; 
+  font-size: 1.2em; /*bigger*/
+  color: #ff6b6b; 
+}
