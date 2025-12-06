@@ -64,6 +64,8 @@ window.onpageshow = function(event) {
   const totalDiv = document.getElementById("totalPoints");
   if (totalDiv) {
     totalDiv.textContent = ` Combined Total Points (All Users): ${totalAll}`;
+    totalDiv.innerHTML = `<span style="color: #2196F3; font-weight: bold; font-style: italic; font-size: 20px;">Combined Total Points (All Users):</span>
+    <span style="color: #ff6b6b; font-weight: bold; font-size: 30px;">${totalAll}</span>`;
   }
 });
 
@@ -101,11 +103,11 @@ document.getElementById("yourAchievementCard").onclick = function() {
       <td>${item.lifted}</td>
       <td>${item.reps}</td>
       <td>${item.points}</td>
-      <td><button class="edit-btn" data-index="${index}">Edit</button></td>
+      <td><button class="btn" data-index="${index}">Edit</button></td>
     `;
     tableBody.appendChild(row);
   });
-  document.querySelectorAll(".edit-btn").forEach(button => {
+  document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", (e) => {
     const index = e.target.dataset.index;
     editAchievement(index);
@@ -113,7 +115,9 @@ document.getElementById("yourAchievementCard").onclick = function() {
 });
 
   const totalPoints = userAchievements.reduce((sum, a) => sum + a.points, 0);
-  totalDiv.textContent = `Total Points: ${totalPoints}`;
+  totalDiv.textContent = ` Your Total Points: ${totalPoints}`;
+  totalDiv.innerHTML = `<span style="color: #2196F3; display: block; text-align: center; font-weight: bold; font-style: italic; font-size: 20px;">Total Points:</span>
+    <span style="color: #ff6b6b; font-weight: bold; display: block; text-align: center; font-size: 30px;">${totalPoints}</span>`;
 };
 document.getElementById("navYourAchievements").onclick = function () {
   document.getElementById("yourAchievementCard").click();
