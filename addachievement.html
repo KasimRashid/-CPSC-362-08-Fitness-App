@@ -17,9 +17,12 @@
   <h2 id="welcome" style="text-align:center; font-family:'Times New Roman', serif; color:#1F618D;"></h2>
 
 <Br>
+ <div style="margin-right: 1040px;">
+    <div style="margin-top: 400px;">
 <button class="page-btn" id="previousPageButton">Back to Homepage</button> <!--href is for attribute (a tag)-->
 <!--<button class="page-btn" id="nextPageButton">Next page</button>-->
-
+</div>
+</div>
 </center>
 
 
@@ -161,6 +164,57 @@ input[type="text"], input[type="number"], input[type="email"], select {
   padding: 6px;              
       
 }
+
+/*ALL TABLE CSS COPIED FROM HOMEPAGE*/
+table {
+    border-collapse: collapse; 
+    background-color: #f9f9f9; 
+    border-radius: 15px; /* Adjust the radius for the roundness */
+    overflow: hidden; 
+}
+
+/* headers */
+table th {
+    background-color: #ff6b6b; 
+    color: white;
+    padding: 10px 15px; 
+    text-align: center; 
+    font-size: 16px; 
+}
+
+/* cells  */
+table td {
+    padding: 12px 15px; 
+    color: black;
+    text-align: center; 
+    border: 2px solid #ddd; /* gray bourder */
+    font-size: 14px; /* text */
+}
+
+td:last-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  color: #ff6b6b; /*mark the point all red-looking with the color from the button*/
+}
+
+td:first-child {
+  font-weight: bold; /*bold the point column*/
+  font-size: 1.2em; /*a little bigger*/
+  font-style: italic;
+}
+
+/* Hover */ 
+table tr:hover { 
+background-color: #ff9b9b;  /* Light pink when hovering */ 
+} 
+
+/*For the second table cases that need the 5th column highlighted*/
+#personalAchievementsTable td:nth-child(5) {
+  font-weight: bold; 
+  font-size: 1.2em; /*bigger*/
+  color: #ff6b6b; 
+}
+
 </style>
 
 <script>
@@ -172,6 +226,7 @@ document.getElementById("previousPageButton").onclick = function() {
 <div class="container">
   <div class="image-box">
     <img src="trophy.png" width="200" height="300" alt="Anime Trophy">
+
 </div>
 
 <div class="form-box">
@@ -192,18 +247,39 @@ document.getElementById("previousPageButton").onclick = function() {
 <h3 id="output" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
 <form onsubmit="return false;">
-  <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
-  <p style="font-family: 'Inter', system-ui, sans-serif;"><big>Please enter your weight, in pound:<br></big></p> <!--Why have gap? Do not put br after p!!-->
+ <!--<big><label for="weightInput">Please enter your weight, in pound:</label><br></big>-->
+ <p style="font-family: 'Inter', system-ui, sans-serif;"><big>Please enter your weight, in pound:<br></big></p><!-- Why have gap? Do not put br after p!!-->
+  <!--<input type="text" id="weightInput" name="weightTextField" placeholder="Type here..." maxlength="4" autocomplete="off">-->
+  <!--<button id="yourWeightSubmitButton" class="btn-submit" onclick="displayWeight()">Submit</button>-->
+  <!--<small id="weightWarning" style="color:red; display:none;"></small>-->
+
+ <div style="position: relative;">
   <input type="text" id="weightInput" name="weightTextField" placeholder="Type here..." maxlength="4" autocomplete="off">
+  <div id="weightWarningToolkit"
+       style="display:none; position:absolute; top:40px; left:0;
+              font-size:12px; font-weight:bold; font-style:italic; background:#ff6b6b; color: white;  
+              border:1px solid #f5c6cb; border-radius:4px; padding:6px 10px; white-space:nowrap;">
+  </div>
   <button id="yourWeightSubmitButton" class="btn-submit" onclick="displayWeight()">Submit</button>
+
+</div>
+
 </form>
 <h3 id="output3" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
 <form onsubmit="return false;">
   <!--<big><label for="weightLiftInput">How much weight do you lift, in pound:</label><br></big>-->
  <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How much weight do you lift, in pound:<br></big></p>
-  <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
+ <div style="position: relative;">
+ <input type="text" id="weightLiftInput" name="myText2" placeholder="Type here..." maxlength="3" autocomplete="off">
+  <div id="weighLiftedtWarningToolkit"
+       style="display:none; position:absolute; top:40px; left:0;
+              font-size:12px; font-weight:bold; font-style:italic; background:#ff6b6b; color: white; 
+              border:1px solid #f5c6cb; border-radius:4px; padding:6px 10px; white-space:nowrap;">
+  </div>
   <button class="btn-submit" onclick="displayLiftedWeight()">Submit</button>
+</div>
+
 </form>
 <h3 id="output5" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
@@ -224,7 +300,7 @@ document.getElementById("previousPageButton").onclick = function() {
       const weightLifted = document.getElementById("weightLiftInput").value;
       const output5 = document.getElementById("output5");
 
-      if (weightLifted > 0 && weightLifted <= 5340) { //5340 is world-record
+      if (weightLifted >= 1 && weightLifted <= 5340) { //5340 is world-record
         output5.innerText = "You lifted: " + weightLifted + " lbs";
       } else {
         output5.innerText = "Please enter a valid weight.";
@@ -235,8 +311,15 @@ document.getElementById("previousPageButton").onclick = function() {
 <form onsubmit="return false;">
   <!--<big><label for="liftRepsInput">How many reps:</label><br></big>-->
   <p style="font-family: 'Inter', system-ui, sans-serif;"><big>How many reps:<br></big></p>
+  <div style="position: relative;">
   <input type="text" id="liftRepsInput" name="myText3" placeholder="Type here..." maxlength="2" autocomplete="off">
+    <div id="repsToolkit"
+       style="display:none; position:absolute; top:40px; left:0;
+              font-size:12px; font-weight:bold; font-style:italic; background:#ff6b6b; color: white; 
+              border:1px solid #f5c6cb; border-radius:4px; padding:6px 10px; white-space:nowrap;">
+    </div>
   <button class="btn-submit" onclick="displayLiftReps()">Submit</button>
+</div>
 </form>
 <h3 id="output7" style="color: green; margin-top: 16px; font-family:'Inter', system-ui, sans-serif;"></h3>
 
@@ -275,30 +358,6 @@ document.getElementById("previousPageButton").onclick = function() {
 </div>
 
 <!--<a href="homePage.html">Homepage (direct HTML link)</a>-->
-
-<style>
-table {
-  width: 40%;
-}
-
-table, th, td {
-  border: 1px solid #ff6b6b;
- border-collapse: collapse;  /*decided to delete double-border lines*/
-}
-
-th, td {
-  text-align: center; /*center horizontal*/
-  vertical-align: middle;
-  padding: 8px;       
-}
-
-th:last-child,
-td:last-child {
-  font-weight: bold; /*bold the point column*/
-  font-size: 1.2em; /*a little bigger*/
-  color: #ff6b6b /*mark the point all red-looking with the color from the button*/
-}
-</style>
 
 <div class="table-box">
 <h2 style="color: green; text-align: center;">Awarded activities</h2>
@@ -405,24 +464,76 @@ function handleClick() {
   }
 function calculate() {
   //alert("Calculating...");
+    const button = document.getElementById("calculation");
 
   const activities = document.getElementById("fitnessActivities").value;
-  const weight = parseFloat(document.getElementById("weightInput").value);
-  const weightLifted = parseFloat(document.getElementById("weightLiftInput").value);
-  const reps = parseInt(document.getElementById("liftRepsInput").value);
+  //const weight = parseFloat(document.getElementById("weightInput").value); //use parseFloat make the invalid string seems valid, so need to update them all to Number()
+  const weight = Number(document.getElementById("weightInput").value);
+
+  //const weightLifted = parseFloat(document.getElementById("weightLiftInput").value);
+  const weightLifted = Number(document.getElementById("weightLiftInput").value);
+
+  //const reps = parseInt(document.getElementById("liftRepsInput").value);
+  const reps = Number(document.getElementById("liftRepsInput").value);
+  
+  let warning = document.getElementById("weightWarningToolkit");
+  let warningWeightLifted = document.getElementById("weighLiftedtWarningToolkit");
+  let warningReps = document.getElementById("repsToolkit");
 
   //valid?
-  if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)) {
+  if (!activities || isNaN(weight) || isNaN(weightLifted) || isNaN(reps)
+  ||weight == 0 || weightLifted ==0 || reps ==0 || activities == "[not selected yet]") {
     alert("Please fill in all fields correctly.");
     document.getElementById("addActivities").disabled = true;
-    if(isNaN(weight)){
-         document.getElementById("weightInput").disabled = false; //only in this case, 
+
+    if(isNaN(weight) || weight=== 0){
+         document.getElementById("weightInput").disabled = false; //only in this case,
+         document.getElementById("weightInput").value = ""; //not block, also clear the content that not suitable 
+         
+         warning.textContent = "Please enter valid numbers: 1-1440 only!";
+         warning.style.display = "block";
+
+        setTimeout(() => {
+        warning.style.display = "none" ;}, 2000);
+
         //have to unblock weight input, because it may incorrect at 1st time
         document.getElementById("yourWeightSubmitButton").disabled =false;
     }
    else{
      document.getElementById("weightInput").disabled = true;
-    
+     warning.style.display = "none";
+     button.innerHTML = "Re-calculate";
+   }
+
+   if(isNaN(weightLifted) || weightLifted ===0){
+        
+         
+         warningWeightLifted.textContent = "Please enter valid numbers: 1 - 5340 only!";
+         warningWeightLifted.style.display = "block";
+
+        setTimeout(() => {
+       warningWeightLifted.style.display = "none" ;}, 3000);
+       
+       document.getElementById("weightLiftInput").value = ""; //clear the content after notification
+    }
+   else{
+    document.getElementById("weightLiftInput").disabled = true;
+     warningWeightLifted.style.display = "none";
+     button.innerHTML = "Re-calculate";
+   }
+
+  if(isNaN(reps) || reps ===0){
+       warningReps.textContent = "Please enter valid numbers: 1 - 99 only!";
+       warningReps.style.display = "block";
+
+       setTimeout(() => {
+       warningReps.style.display = "none" ;}, 3000);
+       
+       document.getElementById("liftRepsInput").value = ""; //clear the content after notification
+    }
+   else{
+    document.getElementById("liftRepsInput").disabled = true;
+     warningReps.style.display = "none";
      button.innerHTML = "Re-calculate";
    }
     return;
@@ -506,10 +617,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 </body>
 
+</html>
+<div style="padding-top: 20px;">
 <footer class="footer">
     <div class="container">
       <p>© 2025 Fitness App. All rights reserved.</p>
     </div>
   </footer>
-
-</html>
+</div>
